@@ -1,0 +1,70 @@
+# LaTeX build artifacts. PDFs are intentionally NOT ignored so the rendered proposal and literature review stay visible on GitHub; remove the trailing "!*.pdf" line below if you would rather keep PDFs out of the repo.
+
+## Core auxiliary files
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+
+## Intermediate documents
+*.dvi
+*.xdv
+*-converted-to.*
+
+## Bibliography auxiliary (biber/biblatex/bibtex)
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+## Build tool databases
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
+## hyperref / cross-references
+*.brf
+*.nav
+*.snm
+*.vrb
+
+## minted / listings
+_minted*
+*.pyg
+
+## Misc package outputs
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.ist
+*.idx
+*.ilg
+*.ind
+*.xdy
+
+## Editor / OS clutter
+*~
+*.swp
+*.bak
+.DS_Store
+.vscode/
+
+# Keep rendered PDFs in the repo (proposal.pdf, lit_review.pdf, etc.).
+!*.pdf

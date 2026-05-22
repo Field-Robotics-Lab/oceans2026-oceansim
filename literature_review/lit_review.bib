@@ -1,0 +1,381 @@
+% -*- mode: bibtex -*-
+%
+% Annotated bibliography for the ocean-simulator literature review.
+%
+% Each entry includes an `annotation` field that the lit_review.tex
+% preamble renders as a short "Notes" paragraph after the entry.
+% Annotations are intentionally brief: what the entry is, what makes
+% it relevant, and the community signals that justify inclusion.
+%
+% URLs and last-accessed dates are recorded so future contributors
+% can verify the snapshot we relied on.
+
+% --------------------------------------------------------------------
+% Substrate
+% --------------------------------------------------------------------
+
+@inproceedings{koenig2004gazebo,
+  author      = {Koenig, Nathan and Howard, Andrew},
+  title       = {Design and Use Paradigms for {Gazebo}, an Open-Source Multi-Robot Simulator},
+  booktitle   = {Proc.\ {IEEE/RSJ} Int.\ Conf.\ on Intelligent Robots and Systems ({IROS})},
+  year        = {2004},
+  pages       = {2149--2154},
+  address     = {Sendai, Japan},
+  doi         = {10.1109/IROS.2004.1389727},
+  url         = {https://github.com/gazebosim/gz-sim},
+  urldate     = {2026-05-21},
+  annotation  = {Founding paper for Gazebo, now maintained by Open
+                 Robotics (post-Ignition rename). Modern Gazebo
+                 (Garden, Harmonic, Jetty) is the substrate beneath
+                 VRX, DAVE, and LRAUV. Gazebo Classic reached
+                 end-of-life Jan~2025. Apache-2.0; very active
+                 community via gazebosim.org forum, Discord, monthly
+                 community meetings. Included as the de-facto open
+                 substrate for ROS-based marine simulation.},
+}
+
+% --------------------------------------------------------------------
+% Gazebo-based marine stacks
+% --------------------------------------------------------------------
+
+@inproceedings{manhaes2016uuvsim,
+  author      = {Manh{\~a}es, Musa Morena Marcusso and
+                 Scherer, Sebastian A. and
+                 Voss, Martin and
+                 Douat, Luiz Ricardo and
+                 Rauschenbach, Thomas},
+  title       = {{UUV} Simulator: A {Gazebo}-based package for underwater intervention and multi-robot simulation},
+  booktitle   = {Proc.\ {OCEANS} 2016 {MTS/IEEE} Monterey},
+  year        = {2016},
+  address     = {Monterey, CA, USA},
+  doi         = {10.1109/OCEANS.2016.7761080},
+  url         = {https://github.com/uuvsimulator/uuv_simulator},
+  urldate     = {2026-05-21},
+  annotation  = {The genealogical root of the open-source
+                 Gazebo+ROS underwater stack. Repository archived
+                 Feb~2023 and the project is unmaintained, but it is
+                 the upstream of DAVE and is still the most commonly
+                 cited paper for AUV simulation in Gazebo. Apache-2.0.
+                 Kept for historical and didactic value, not as a
+                 recommended current tool.},
+}
+
+@inproceedings{zhang2022dave,
+  author      = {Zhang, Mabel M. and
+                 Choi, Woen-Sug and
+                 Herman, Jonathan and
+                 Davis, Duane and
+                 Vogt, Carson and
+                 McCarrin, Michael and
+                 Vijay, Vaibhav and
+                 Dutia, Dharini and
+                 Lew, William and
+                 Peters, Steven and
+                 Bingham, Brian},
+  title       = {{DAVE} Aquatic Virtual Environment: Toward a General Underwater Robotics Simulator},
+  booktitle   = {Proc.\ {IEEE/OES} Autonomous Underwater Vehicles Symposium ({AUV})},
+  year        = {2022},
+  address     = {Singapore},
+  eprint      = {2209.02862},
+  eprinttype  = {arXiv},
+  url         = {https://github.com/Field-Robotics-Lab/dave},
+  urldate     = {2026-05-21},
+  annotation  = {Extends UUV Simulator with standardized
+                 environments (bathymetry, currents), manipulation,
+                 and oceanographic data. Multi-institutional
+                 (NPS, WHOI, Open Robotics) and a port to modern
+                 Gazebo is in progress. Apache-2.0;
+                 documentation site at
+                 \url{https://field-robotics-lab.github.io/dave.doc/}.
+                 Included as the most ambitious extension of the
+                 UUV~Sim lineage.},
+}
+
+@inproceedings{bingham2021vrx,
+  author      = {Bingham, Brian and
+                 Aguero, Carlos and
+                 McCarrin, Michael and
+                 Klamo, Joseph and
+                 Malia, Joshua and
+                 Allen, Kevin and
+                 Lum, Tyler and
+                 Rawson, Marshall and
+                 Waqar, Rumman},
+  title       = {Toward Maritime Robotic Simulation in {Gazebo}},
+  booktitle   = {Proc.\ {OCEANS} 2021 San Diego--Porto},
+  year        = {2021},
+  doi         = {10.23919/OCEANS44145.2021.9705971},
+  url         = {https://github.com/osrf/vrx},
+  urldate     = {2026-05-21},
+  annotation  = {Reference open-source USV simulator and the
+                 backbone of the RobotX Maritime Challenge.
+                 Modernization (v3.x on Gazebo Harmonic + ROS~2
+                 Jazzy) is led by Honu Robotics; sponsored by
+                 RoboNation. Apache-2.0. The only project we survey
+                 that integrates surface, aerial, and terrestrial
+                 dynamics in one open, maintained world --- which is
+                 why it is central to a multi-domain ocean review.},
+}
+
+@inproceedings{player2023lrauv,
+  author      = {Player, Timothy R. and
+                 Chakravarty, Arjo and
+                 Zhang, Mabel M. and
+                 Raanan, Ben Yair and
+                 Kieft, Brian and
+                 Zhang, Yanwu and
+                 Hobson, Brett},
+  title       = {From Concept to Field Tests: Accelerated Development of Multi-{AUV} Missions Using a High-Fidelity Faster-than-Real-Time Simulator},
+  booktitle   = {Proc.\ {IEEE} Int.\ Conf.\ on Robotics and Automation ({ICRA})},
+  year        = {2023},
+  address     = {London, UK},
+  url         = {https://github.com/mbari-org/gz_lrauv},
+  urldate     = {2026-05-21},
+  annotation  = {Production digital twin of MBARI's Tethys-class
+                 long-range AUV, used to validate multi-day science
+                 missions before deployment. Demonstrates Gazebo
+                 (modern) for long-duration AUV ops. The standalone
+                 \texttt{osrf/lrauv} fork was archived in
+                 Mar~2025 after upstreaming; ongoing work continues
+                 in the MBARI org. Apache-2.0. Included as an
+                 exemplar of production use of an open simulator.},
+}
+
+% --------------------------------------------------------------------
+% Game-engine-based simulators
+% --------------------------------------------------------------------
+
+@inproceedings{potokar2022holoocean,
+  author      = {Potokar, Easton and
+                 Ashford, Spencer and
+                 Kaess, Michael and
+                 Mangelson, Joshua G.},
+  title       = {{HoloOcean}: An Underwater Robotics Simulator},
+  booktitle   = {Proc.\ {IEEE} Int.\ Conf.\ on Robotics and Automation ({ICRA})},
+  year        = {2022},
+  address     = {Philadelphia, PA, USA},
+  doi         = {10.1109/ICRA46639.2022.9812388},
+  url         = {https://byu-holoocean.github.io/holoocean-docs/},
+  urldate     = {2026-05-21},
+  annotation  = {Initial release of BYU FRoStLab's Unreal-Engine
+                 underwater simulator, built on top of Microsoft
+                 Holodeck. Python-first API. MIT license on the
+                 client side (Unreal EULA applies to the engine).
+                 Kept because HoloOcean is the most widely cited
+                 non-Gazebo underwater simulator in marine
+                 perception research.},
+}
+
+@article{potokar2024holoocean,
+  author      = {Potokar, Easton and
+                 Lay, Kalin and
+                 Norman, Kalebh and
+                 Benham, Devin and
+                 Ashford, Spencer and
+                 Peirson, Robert and
+                 Mangelson, Joshua G.},
+  title       = {{HoloOcean}: A Full-Featured Marine Robotics Simulator for Perception and Autonomy},
+  journal     = {{IEEE} Journal of Oceanic Engineering},
+  year        = {2024},
+  doi         = {10.1109/JOE.2024.3403060},
+  url         = {https://frostlab.byu.edu/holoocean-underwater-simulator},
+  urldate     = {2026-05-21},
+  annotation  = {Expanded sensor suite (imaging sonar, side-scan,
+                 multibeam, DVL) and improved hydrodynamics. The
+                 reference paper to cite for current HoloOcean
+                 capabilities. A 2.0 preview targeting Unreal~5.3
+                 and ROS~2 appeared in late~2025 (arXiv:2510.06160)
+                 but is not yet a stable release.},
+}
+
+@inproceedings{song2025oceansim,
+  author      = {Song, Jingyu and
+                 Ma, Haoyu and
+                 Bagoren, Onur and
+                 Sethuraman, Advaith V. and
+                 Zhang, Yiting and
+                 Skinner, Katherine A.},
+  title       = {{OceanSim}: A {GPU}-Accelerated Underwater Robot Perception Simulation Framework},
+  booktitle   = {Proc.\ {IEEE/RSJ} Int.\ Conf.\ on Intelligent Robots and Systems ({IROS})},
+  year        = {2025},
+  eprint      = {2503.01074},
+  eprinttype  = {arXiv},
+  url         = {https://github.com/umfieldrobotics/OceanSim},
+  urldate     = {2026-05-21},
+  annotation  = {Brings underwater simulation onto NVIDIA Isaac Sim /
+                 Omniverse, with GPU ray tracing and a USD asset
+                 pipeline. Lead group: Field Robotics Group (FRoG),
+                 University of Michigan; PI Katherine~A.~Skinner.
+                 Apache-2.0; very active (v4.5 released Sept~2025,
+                 Isaac Sim~5.0 compatible). The strongest current
+                 candidate for vectorized ML training in marine
+                 perception. Underwater-only today, but the
+                 underlying engine extends naturally to surface,
+                 aerial, and terrestrial assets.},
+}
+
+% --------------------------------------------------------------------
+% Standalone hydrodynamics + rendering
+% --------------------------------------------------------------------
+
+@inproceedings{cieslak2019stonefish,
+  author      = {Cie{\'s}lak, Patryk},
+  title       = {{Stonefish}: An Advanced Open-Source Simulation Tool Designed for Marine Robotics, With a {ROS} Interface},
+  booktitle   = {Proc.\ {OCEANS} 2019 Marseille},
+  year        = {2019},
+  doi         = {10.1109/OCEANSE.2019.8867434},
+  url         = {https://github.com/patrykcieslak/stonefish},
+  urldate     = {2026-05-21},
+  annotation  = {Self-contained C++/OpenGL simulator from the
+                 Underwater Vision and Robotics Lab at the University
+                 of Girona (CIRS). Independent of Gazebo, with its
+                 own renderer and Bullet physics. GPL-3.0;
+                 ROS~1/ROS~2 wrappers via \texttt{stonefish\_ros}.
+                 Included because Stonefish is the most active
+                 non-game-engine alternative for high-fidelity
+                 underwater simulation.},
+}
+
+@inproceedings{grimaldi2025stonefish,
+  author      = {Grimaldi, Michele and
+                 Cie{\'s}lak, Patryk and
+                 others},
+  title       = {{Stonefish}: Supporting Machine Learning Research in Marine Robotics},
+  booktitle   = {Proc.\ {IEEE} Int.\ Conf.\ on Robotics and Automation ({ICRA})},
+  year        = {2025},
+  eprint      = {2502.11887},
+  eprinttype  = {arXiv},
+  url         = {https://github.com/patrykcieslak/stonefish},
+  urldate     = {2026-05-21},
+  annotation  = {Adds ML-oriented sensors (event camera, thermal,
+                 optical flow, visible-light communication) and
+                 frames Stonefish as an ML research substrate. Cite
+                 this rather than the 2019 OCEANS paper when
+                 discussing ML use cases.},
+}
+
+% --------------------------------------------------------------------
+% Hydrodynamics specialist
+% --------------------------------------------------------------------
+
+@inproceedings{ruehl2017wecsim,
+  author      = {Ruehl, Kelley and
+                 Michelen, Carlos and
+                 Bosma, Bret and
+                 Yu, Yi-Hsiang},
+  title       = {{WEC-Sim}: An Open-Source Tool for Simulating Wave Energy Converters},
+  booktitle   = {Proc.\ 12th European Wave and Tidal Energy Conf.\ ({EWTEC})},
+  year        = {2017},
+  address     = {Cork, Ireland},
+  url         = {https://wec-sim.github.io/WEC-Sim/},
+  urldate     = {2026-05-21},
+  annotation  = {NREL + Sandia, funded by US DOE Water Power
+                 Technologies Office. MATLAB/Simulink/Simscape
+                 Multibody toolchain for floating-body
+                 hydrodynamics; not a robotics simulator.
+                 Apache-2.0; v7.0 released Aug~2025; runs an annual
+                 training course and active forum. Included as the
+                 domain standard for surface hydrodynamics --- useful
+                 as a verification reference, not as a primary
+                 robotics simulator.},
+}
+
+% --------------------------------------------------------------------
+% Excluded / adjacent / borderline
+% --------------------------------------------------------------------
+
+@inproceedings{loncar2022marus,
+  author      = {Lon{\v{c}}ar, Igor and
+                 Obradovi{\'c}, Juraj and
+                 Kr{\v{c}}mar, Natko and
+                 Sitar, Ivan and
+                 Ku{\v{s}}njer, Luka and
+                 Mi{\v{s}}kovi{\'c}, Nikola and
+                 Vuk{\'i}c, Zoran},
+  title       = {{MARUS} -- A Marine Robotics Simulator},
+  booktitle   = {Proc.\ {OCEANS} 2022 Hampton Roads},
+  year        = {2022},
+  doi         = {10.1109/OCEANS47191.2022.9977075},
+  url         = {https://github.com/MARUSimulator},
+  urldate     = {2026-05-21},
+  annotation  = {Unity-based maritime simulator from LABUST,
+                 University of Zagreb FER. Apache-2.0; gRPC bridge
+                 to ROS~1/ROS~2. Technically interesting but with
+                 limited adoption outside the originating lab.
+                 Noted here so we can revisit if the community
+                 grows.},
+}
+
+@misc{novitzky2024aquaticus,
+  author      = {Novitzky, Michael and
+                 Pippin, Charles and
+                 Collins, Thomas R. and
+                 Fitzpatrick, Paul and
+                 Holness, Alexander and
+                 Schmidt, Henrik},
+  title       = {Evaluating Collaborative Autonomy in Opposed Environments Using Maritime Capture-the-Flag Competitions},
+  year        = {2024},
+  eprint      = {2404.17038},
+  eprinttype  = {arXiv},
+  url         = {https://oceanai.mit.edu/aquaticus/},
+  urldate     = {2026-05-21},
+  annotation  = {Project Aquaticus is a maritime capture-the-flag
+                 testbed originally developed at MIT and migrated to
+                 USMA West Point in 2019. Built on MOOS-IvP rather
+                 than a 3-D physics simulator; cite for
+                 human-robot teaming context, not as a comparable
+                 simulator product.},
+}
+
+@misc{jansen2023cosysairsim,
+  author      = {Jansen, Wouter and
+                 Verreycken, Erik and
+                 Schenck, Anthony and
+                 Blanqu{\'e}, Jean-Edouard and
+                 Verhulst, Henri and
+                 Steckel, Jan},
+  title       = {{Cosys-AirSim}: A Real-Time Simulation Framework Expanded for Complex Industrial Applications},
+  year        = {2023},
+  eprint      = {2303.13381},
+  eprinttype  = {arXiv},
+  url         = {https://github.com/Cosys-Lab/Cosys-AirSim},
+  urldate     = {2026-05-21},
+  annotation  = {University of Antwerp's actively maintained fork of
+                 Microsoft AirSim (archived 2022). MIT-licensed;
+                 predominantly aerial. Noted because AirSim
+                 derivatives are the most common path to marine
+                 simulation on Unreal outside of HoloOcean.},
+}
+
+@misc{vanmiddelaar2025asvsim,
+  author      = {van Middelaar, Robin and
+                 others},
+  title       = {{ASVSim}: A Simulation Framework for Autonomous Surface Vehicles Built on {Cosys-AirSim}},
+  year        = {2025},
+  eprint      = {2506.22174},
+  eprinttype  = {arXiv},
+  url         = {https://arxiv.org/abs/2506.22174},
+  urldate     = {2026-05-21},
+  annotation  = {Surface-vehicle spinoff of Cosys-AirSim. Too new
+                 (2025) to claim community traction; included so we
+                 can revisit the Unreal+ASV story in a future pass.},
+}
+
+% --------------------------------------------------------------------
+% Umbrella survey
+% --------------------------------------------------------------------
+
+@misc{aldegheri2025survey,
+  author      = {Aldegheri, Stefano and others},
+  title       = {A Review of Underwater Robotic Simulators},
+  year        = {2025},
+  eprint      = {2504.06245},
+  eprinttype  = {arXiv},
+  url         = {https://arxiv.org/abs/2504.06245},
+  urldate     = {2026-05-21},
+  annotation  = {Recent umbrella survey covering many of the same
+                 underwater simulators we discuss here. Treated as a
+                 companion reference; the author list and exact
+                 affiliations should be verified before citing in a
+                 published version of this document.},
+}

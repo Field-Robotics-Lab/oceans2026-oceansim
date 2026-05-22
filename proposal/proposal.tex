@@ -1,0 +1,124 @@
+% OCEANS 2026 Monterey -- Workshop Proposal
+%
+% Submission constraints (https://monterey26.oceansconference.org/workshops-and-tutorials/):
+%   * Single PDF, 3 pages max.
+%   * Required sections (in order): 1. Workshop title; 2. Organizer names, affiliations, and short bios (<=100 words each); 3. Motivation and objectives (and why timely/relevant to OCEANS); 4. Proposed format and schedule; 5. Target audience; 6. Preliminary list of speakers (if available); 7. Expected outcomes; 8. Workshop website plan; 9. Equipment requirements.
+%   * Submission deadline: 26 May 2026 (PaperCept, "OCEANS 2026 Monterey -- Town Hall Proposal").
+%   * At least one organizer must register and attend.
+
+\documentclass[10pt]{article}
+
+\usepackage[letterpaper,margin=0.85in,top=0.7in,bottom=0.8in]{geometry}
+\usepackage{microtype}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{colorlinks=true, linkcolor=black, citecolor=black, urlcolor=blue!50!black}
+
+\titlespacing*{\section}{0pt}{0.6\baselineskip}{0.15\baselineskip}
+\titlespacing*{\subsection}{0pt}{0.35\baselineskip}{0.1\baselineskip}
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection}{0.5em}{}
+\setlist{nosep,leftmargin=*}
+\setlength{\parskip}{2pt}
+\setlength{\parindent}{0pt}
+
+\newcommand{\refitem}[2]{\item[{[#1]}] #2}
+
+\begin{document}
+
+% CLAUDE: title is TBD. Candidates to discuss with co-organizers: (a) "Multi-Domain Open Simulation for Ocean Robotics: State of Practice and a Community Roadmap"; (b) "From Many Sims to One: A Roadmap for Open, Multi-Domain Ocean Robot Simulation"; (c) "Ocean Sim 2026: An Open Simulation Stack for Marine Autonomy and Synthetic Data". The placeholder below uses (a).
+\begin{center}
+  {\Large\bfseries Multi-Domain Open Simulation for Ocean Robotics:\\ State of Practice and a Community Roadmap}\\[2pt]
+  {\small Half-day workshop proposed for IEEE OCEANS 2026, Monterey, CA}
+\end{center}
+
+\section{Organizers}
+
+\textbf{Brian Bingham}, Naval Postgraduate School, Monterey, CA, USA. \; \href{mailto:bbingham@nps.edu}{bbingham@nps.edu}.
+
+\emph{Bio (89 words).} Brian Bingham is a Research Associate Professor at the Naval Postgraduate School. He works on marine robotics, autonomy, and the simulation tools that support both. He has led the open Virtual RobotX (VRX) simulator since 2019, and he organizes the simulation-based VRX Challenge that runs alongside the on-water Maritime RobotX Challenge. His current focus is on what fidelity is actually needed for ocean simulation to serve as a daily tool for autonomy development, rather than as a one-off demonstration platform.
+
+\emph{Additional organizers will be recruited through the public workshop repository (Section~\ref{sec:website}) before the camera-ready submission. The aim is an organizing committee that covers Gazebo-based, game-engine-based, and ML-focused simulation efforts.}
+% CLAUDE: confirm which collaborators we plan to invite first (e.g., representatives from DAVE, HoloOcean, OceanSim, Stonefish) before we open the github call. Each added organizer needs a <=100-word bio.
+
+\section{Motivation and Objectives}
+
+For ground and aerial autonomy, simulation is part of the daily development cycle. Demonstrating that a navigation or perception stack is correct can require tens to hundreds of millions of simulated miles, which on-vehicle testing cannot cover, and tools such as CARLA, AirSim, and Isaac Sim are now common ground across research groups, vendors, and program offices~[1,2]. Ocean robotics has the same need. Surface, underwater, and maritime aerial systems must be tested across distances, durations, and weather and sea states that on-water trials cannot reach, and the same simulators are increasingly asked to produce synthetic data for machine-learning perception pipelines~[3,4].
+
+The current state of practice in ocean simulation is fragmented. Our working literature review~[3] identifies several open-source projects that each cover part of the problem: Gazebo-based stacks such as VRX~[5], DAVE~[6], and the MBARI LRAUV simulation; the game-engine-based HoloOcean~[4] on Unreal and OceanSim~[7] on NVIDIA Isaac Sim; the standalone Stonefish~[8]; and the hydrodynamics specialist WEC-Sim. Each has its own strengths in fidelity, multi-domain coverage, headless CI use, and suitability for vectorized ML training. No single project today plays the role that CARLA or AirSim play for the driving and aerial communities, and federated one-off funding for individual simulators has slowed convergence. OCEANS 2026 in Monterey gathers the academic, naval, industrial, and ocean-instrumentation groups whose combined needs define what an ocean simulator has to be, which makes it the right venue for this conversation.
+
+We scope the workshop to multi-domain simulators that meet at least two of three working criteria: (i) open source under a usable license; (ii) documentation good enough that a new user can stand the tool up without reading the source; (iii) a large active user base, ideally beyond just maritime applications. This scope excludes one-off academic prototypes. It includes projects built on closed engines (Unreal, Unity, Isaac Sim) when the marine-specific layer is itself open and meets the criteria.
+
+\textbf{Workshop objectives.}
+\begin{enumerate}[label=(O\arabic*)]
+  \item \emph{Refine what we mean by ``ocean sim.''} Agree on what the simulation stack must do, end to end, for it to support both robotic-autonomy development and synthetic-data generation for ML training. The target is a complete tool with adequate fidelity in enough places to be used as a means to an end.
+  \item \emph{Summarize the state of the art and the state of practice.} Produce a current, citable snapshot of the active open-source multi-domain marine simulators and how they hold up against the three use cases above.
+  \item \emph{Draft a short community roadmap.} Identify the gaps that the community should jointly invest in next, in a form that is usable as a reference for funding agencies (ONR, DARPA, NSF) and for upstream maintainers.
+\end{enumerate}
+
+Several recent community events have covered adjacent ground. AQ$^2$UASIM at ICRA 2025~[9] looked at marine simulators for quantitative and qualitative evaluation. Recent ICRA and IROS workshops have covered underwater perception, sim-to-real transfer, and synthetic data for ML. This workshop is complementary to those: the audience is OCEANS practitioners, and the framing is ``what shared tool do we want next, and how should it be funded?'' rather than a survey of research prototypes.
+
+\section{Proposed Format and Schedule}
+
+Half day: about 3.5~hours plus a 30-minute coffee break.
+
+\begin{tabular}{@{}p{0.16\textwidth}p{0.78\textwidth}@{}}
+  \textbf{00:00--00:15} & Welcome. Scope of ``multi-domain ocean sim'' and the working inclusion criteria (organizers). \\
+  \textbf{00:15--01:30} & \emph{State of the art and state of practice.} Short invited talks (12--15~min) from one representative per active project, paired across Gazebo-based and game-engine-based stacks. \\
+  \textbf{01:30--02:00} & Coffee and posters from contributed user-experience reports (call for short submissions on the workshop site). \\
+  \textbf{02:00--02:45} & \emph{Synthetic data and ML training} panel: how each stack handles vectorized environments and perception-data generation, with a moderated comparison. \\
+  \textbf{02:45--03:30} & \emph{Roadmap working session.} Breakouts on (i)~fidelity gaps, (ii)~tooling and CI, (iii)~funding model and governance. Notes go straight into the shared roadmap document. \\
+  \textbf{03:30--03:45} & Close. Assignment of section editors for the post-workshop white paper. \\
+\end{tabular}
+
+\section{Target Audience}
+
+Autonomy developers who use ocean simulation as a working tool, not as the end product. The audience includes academic groups, industry, government laboratories, and naval programs. A secondary audience is simulator maintainers looking for alignment with users, ML researchers who need synthetic marine data, and program managers who fund marine-autonomy infrastructure. Some familiarity with ROS, or with one of the projects in Section~\ref{sec:speakers}, will help but is not required.
+
+\section{Preliminary List of Speakers}\label{sec:speakers}
+
+We will assemble a slate of speakers that covers the active multi-domain marine simulation projects. The list below names the \emph{projects} we are targeting for one invited speaker each. Individual speakers will be finalized through the public organizing process in Section~\ref{sec:website}.
+
+\begin{itemize}
+  \item \textbf{Gazebo-based:} VRX~[5]; DAVE~[6]; MBARI LRAUV simulation.
+  \item \textbf{Game-engine-based:} HoloOcean (Unreal)~[4]; OceanSim (NVIDIA Isaac Sim)~[7].
+  \item \textbf{Standalone or specialist:} Stonefish~[8]; WEC-Sim as a hydrodynamics verification reference.
+  \item \textbf{User or integrator perspective:} one talk from an ocean-autonomy program that uses simulation in production, to keep the day grounded in practitioner needs.
+\end{itemize}
+
+% CLAUDE: confirm the projects above match the lit-review scope before we send invitations; cross-check against literature_review/lit_review.tex.
+
+\section{Expected Outcomes}
+
+\begin{enumerate}[label=(\arabic*)]
+  \item A \emph{community roadmap}: a short document that records agreed gaps, near-term priorities, and a plan for cooperation among the participating projects.
+  \item A \emph{white paper for funding agencies} (ONR, DARPA, and related sponsors). Federated funding for one-off simulators is slowing the community down. The white paper will argue for a coordinated alternative and describe what it should look like.
+  \item \emph{Follow-on collaborations}: shared assets, sensor models, scene formats, and CI infrastructure that the participating projects agree to pursue jointly, with named points of contact.
+\end{enumerate}
+
+\section{Workshop Website Plan}\label{sec:website}
+
+The workshop site will live under \href{https://bbingham.dev}{bbingham.dev}, served by GitHub Pages from a public repository. That same repository hosts this proposal, the running literature review, the call for contributed posters, and the live drafts of the roadmap and white paper. Running the workshop out of a public repository keeps the organizing process open, lets additional organizers and contributors join by pull request, and keeps the post-workshop artifacts citable and easy to find.
+
+\section{Equipment Requirements}
+
+None beyond the projector and screen provided by the conference.
+
+\vspace{2pt}
+\section*{References}
+\small
+\begin{list}{}{\leftmargin=2.0em \itemsep=0pt \parsep=0pt \itemindent=-2.0em}
+  \refitem{1}{S.~Shah \emph{et al.}, ``AirSim: High-fidelity visual and physical simulation for autonomous vehicles,'' \emph{FSR}, 2017.}
+  \refitem{2}{A.~Dosovitskiy \emph{et al.}, ``CARLA: An open urban driving simulator,'' \emph{CoRL}, 2017.}
+  \refitem{3}{B.~Bingham (ed.), \emph{Open-Source Simulators for Multi-Domain Ocean Robotics: An Annotated Literature Review}, 2026 (working document, this project).}
+  \refitem{4}{E.~Potokar \emph{et al.}, ``HoloOcean: Realistic sonar simulation,'' \emph{IROS}, 2022; and HoloOcean 2.0, \emph{IEEE JOE}, 2024.}
+  \refitem{5}{B.~Bingham \emph{et al.}, ``Toward Maritime Robotic Simulation in Gazebo,'' \emph{OCEANS}, 2019; and ``Mobile Robot Simulation for Unmanned Surface Vehicles in Ocean Environments,'' \emph{IEEE JOE} (in revision), 2026.}
+  \refitem{6}{M.~Zhang \emph{et al.}, ``DAVE Aquatic Virtual Environment: Toward a General Underwater Robotics Simulator,'' \emph{AUV}, 2022.}
+  \refitem{7}{J.~Song \emph{et al.}, ``OceanSim: A GPU-accelerated underwater robot perception simulation framework,'' arXiv 2503.01074, 2025.}
+  \refitem{8}{P.~Cie\'slak, ``Stonefish: An advanced open-source simulation tool for marine robotics,'' \emph{OCEANS}, 2019; and M.~Grimaldi \emph{et al.}, ``Stonefish: Supporting machine learning research in marine robotics,'' \emph{ICRA}, 2025.}
+  \refitem{9}{Y.~Petillot \emph{et al.}, ``AQ$^2$UASIM: Advancing Quantitative and QUAlitative SIMulators for marine applications,'' workshop at \emph{ICRA}, 2025.}
+\end{list}
+
+\end{document}

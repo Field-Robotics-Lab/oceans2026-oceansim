@@ -8,29 +8,11 @@
 \usepackage{array}
 \usepackage{xcolor}
 \usepackage{hyperref}
-\hypersetup{
-  colorlinks  = true,
-  linkcolor   = black,
-  citecolor   = black,
-  urlcolor    = blue!50!black,
-}
+\hypersetup{colorlinks=true, linkcolor=black, citecolor=black, urlcolor=blue!50!black}
 
 % --- Bibliography ---------------------------------------------------
-% biblatex with a verbose author-year style. We keep the full author
-% list (maxbibnames=99) and print the per-entry annotation field as a
-% short "Notes" paragraph after every reference, so the bibliography
-% functions as an annotated bibliography.
-\usepackage[
-  backend     = biber,
-  style       = authoryear,
-  maxbibnames = 99,
-  maxcitenames = 2,
-  sorting     = nyt,
-  url         = true,
-  doi         = true,
-  isbn        = false,
-  eprint      = true,
-]{biblatex}
+% biblatex with a verbose author-year style. We keep the full author list (maxbibnames=99) and print the per-entry annotation field as a short "Notes" paragraph after every reference, so the bibliography functions as an annotated bibliography.
+\usepackage[backend=biber, style=authoryear, maxbibnames=99, maxcitenames=2, sorting=nyt, url=true, doi=true, isbn=false, eprint=true]{biblatex}
 \addbibresource{lit_review.bib}
 
 \renewbibmacro*{finentry}{%
@@ -42,266 +24,116 @@
 }
 
 % --- Front matter ---------------------------------------------------
-\title{Open-Source Simulators for Multi-Domain Ocean Robotics:\\
-       An Annotated Literature Review}
-\author{%
-  Brian Bingham\thanks{%
-    \href{mailto:briansbingham@gmail.com}{briansbingham@gmail.com}.
-    Additional contributors and reviewers are listed in
-    Section~\ref{sec:contributors}.}%
-}
+\title{Open-Source Simulators for Multi-Domain Ocean Robotics:\\ An Annotated Literature Review}
+\author{Brian Bingham\thanks{\href{mailto:briansbingham@gmail.com}{briansbingham@gmail.com}. Additional contributors and reviewers are listed in Section~\ref{sec:contributors}.}}
 \date{\today}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-This document is a working literature review of open-source simulation
-frameworks usable for ocean robotics in the year 2026. We focus on
-projects that can represent the marine domain together with adjacent
-domains (underwater, water surface, aerial, terrestrial) and that
-satisfy our working definition of a healthy software project: open
-source, well documented, and supported by a large and active
-community. We include projects whose domain-specific layer is itself
-open source even when they are built on closed-source engines (Unreal,
-Unity, NVIDIA Isaac Sim). The review is annotated: each reference is
-accompanied by a brief note explaining what the entry is and why we
-keep it in our reading list. The intent is that the document is short
-enough to keep current, and verbose enough that a future contributor
-or collaborator can recover our reasoning without re-reading the
-underlying papers.
+This is a working literature review of open-source simulation frameworks usable for ocean robotics in the year 2026. The scope is projects that can represent the marine domain together with adjacent domains (underwater, water surface, air, land), and that satisfy our working definition of a healthy software project: open source, well documented, and supported by a sizable, active community. Projects whose domain-specific layer is itself open source are included even when they sit on closed-source engines (Unreal, Unity, NVIDIA Isaac Sim). Each entry has a short note that says what the project is and why we keep it on the reading list. The aim is a document short enough to keep current and verbose enough that a future contributor can recover the reasoning without reading the underlying papers again.
 \end{abstract}
 
 % --------------------------------------------------------------------
 \section{Scope and motivation}
 \label{sec:scope}
 
-We are interested in simulators that support three distinct use cases,
-each of which exerts different pressure on the underlying tool:
+We care about simulators that have to serve three use cases. Each one puts different pressure on the underlying tool.
 
 \begin{enumerate}[leftmargin=*]
-  \item \textbf{Manual, in-the-loop development and operator training.}
-    The simulator serves as a visual and dynamic sandbox in which a
-    human iterates on algorithms, missions, or operator procedures.
-    Here, rendering fidelity, asset availability, and ergonomics
-    dominate; raw throughput is secondary.
-
-  \item \textbf{Continuous-integration regression testing for software
-    safety.} The simulator must be runnable headless, deterministic,
-    fast enough to gate merges, and stable across operating-system
-    upgrades. Here, reproducibility and packaging dominate; visual
-    polish is irrelevant.
-
-  \item \textbf{Vectorized training for machine-learning research.}
-    The simulator is treated as a parallelizable environment factory.
-    Here, steps-per-wall-second across many concurrent worlds dominate,
-    and GPU acceleration, deterministic resets, and a Python-native
-    interface become essential.
+  \item \textbf{Manual, in-the-loop development and operator training.} The simulator is a visual and dynamic sandbox in which a human iterates on algorithms, missions, or operator procedures. What matters here is rendering, asset availability, and ergonomics. Raw throughput is secondary.
+  \item \textbf{Continuous-integration regression testing for software safety.} The simulator has to run headless, has to be deterministic, has to be fast enough to gate merges, and has to stay stable across OS upgrades. What matters here is reproducibility and packaging. Visual polish does not.
+  \item \textbf{Vectorized training for machine-learning research.} The simulator is treated as a parallelizable environment factory. What matters here is steps per wall-second across many concurrent worlds, GPU acceleration, deterministic resets, and a Python-native interface.
 \end{enumerate}
 
-Our domain of interest is \emph{multi-domain ocean robotics}: a single
-simulated world that may contain assets operating underwater, on the
-water surface, in the air, and on land, interacting through a shared
-environment (e.g.\ a USV launching a UAV that overflies a shoreline
-sensor while an AUV operates below the surface).
+Our domain of interest is \emph{multi-domain ocean robotics}: a single simulated world that may contain assets operating underwater, on the water surface, in the air, and on land, interacting through a shared environment (for example, a USV launching a UAV that overflies a shoreline sensor while an AUV operates below the surface).
 
 % --------------------------------------------------------------------
 \section{Selection criteria}
 \label{sec:criteria}
 
-We adopt three working criteria for inclusion. A project is in scope
-if it is (i)~\textbf{open source} with a usable license, (ii)~has
-\textbf{documentation good enough that a new user can stand it up
-without reading the source} (a soft criterion; we note when only the
-source serves as documentation), and (iii)~shows \textbf{evidence of a
-large and active community}, operationalized as some combination of
-GitHub stars, recent commit cadence, a maintained forum or chat, and
-external citations.
+We use three working criteria for inclusion. A project is in scope if it is (i)~\textbf{open source} with a usable license; (ii)~has \textbf{documentation good enough that a new user can stand it up without reading the source} (a soft criterion; we note when only the source serves as documentation); and (iii)~shows \textbf{evidence of a sizable, active community}, taken here as some combination of GitHub stars, recent commit cadence, a maintained forum or chat, and outside citations.
 
-We explicitly include projects built on proprietary engines (NVIDIA
-Isaac Sim, Unreal Engine, Unity) when the marine layer itself is open
-source and meets the three criteria above. We \textbf{exclude}
-projects that are clearly one-off academic prototypes without a
-sustained user base; a small number of borderline cases are noted in
-Section~\ref{sec:excluded} so this document can be revisited as
-their communities mature.
+Projects built on proprietary engines (NVIDIA Isaac Sim, Unreal, Unity) are included when the marine layer is itself open source and meets the three criteria above. We \textbf{exclude} projects that are one-off academic prototypes without a sustained user base. A small number of borderline cases are noted in Section~\ref{sec:excluded} so the document can be revisited as those communities mature.
 
 % --------------------------------------------------------------------
 \section{The landscape}
 \label{sec:landscape}
 
 \subsection{General-purpose substrate: Gazebo}
-Modern Gazebo \autocite{koenig2004gazebo} is the substrate beneath
-most of the open-source marine stacks we cover. The Open-Robotics-led
-modern series (Garden, Harmonic, Jetty) replaced the ``Ignition''
-naming after the 2022 trademark issue; Gazebo Classic reached
-end-of-life in January~2025. The project is an exemplar of large
-community plus marginal documentation: a clean API and a sprawling
-ecosystem, but learning paths typically still route through source
-reading and community channels.
+Modern Gazebo \autocite{koenig2004gazebo} is the substrate beneath most of the open-source marine stacks we cover. The Open-Robotics-led modern series (Garden, Harmonic, Jetty) replaced the ``Ignition'' naming after the 2022 trademark issue. Gazebo Classic reached end-of-life in January~2025. The project is a case of large community plus thin documentation: a clean API and a sprawling ecosystem, but learning paths still tend to route through source reading and community channels.
 
 \subsection{Gazebo-based marine stacks}
 \label{sec:gazebo-marine}
 
 The largest cluster of marine simulators builds on the Gazebo family.
 
-\textbf{UUV Simulator} \autocite{manhaes2016uuvsim} pioneered Gazebo
-Classic underwater dynamics and remains widely referenced even though
-the upstream repository was archived in 2023. We retain it here for
-historical context: it is the genealogical root of most ROS/Gazebo
-underwater work.
+\textbf{UUV Simulator} \autocite{manhaes2016uuvsim} pioneered Gazebo Classic underwater dynamics and is still widely cited, even though the upstream repository was archived in 2023. We keep it here for historical context: it is the genealogical root of most ROS/Gazebo underwater work.
 
-\textbf{DAVE} \autocite{zhang2022dave} extends UUV Simulator toward
-standardized scenes, manipulation, and oceanographic environments.
-The project is in the middle of a port from Gazebo Classic to modern
-Gazebo and is led by a coalition that includes the Naval Postgraduate
-School, WHOI, and Open Robotics.
+\textbf{DAVE} \autocite{zhang2022dave} extends UUV Simulator toward standardized scenes, manipulation, and oceanographic environments. The project is mid-port from Gazebo Classic to modern Gazebo and is led by a group that includes the Naval Postgraduate School, WHOI, and Open Robotics.
 
-\textbf{VRX (Virtual RobotX)} \autocite{bingham2021vrx} is the most
-actively maintained marine Gazebo stack we know of. Originally
-developed for the RobotX Maritime Challenge, modern releases (v3.x,
-on Gazebo Harmonic and ROS~2 Jazzy) demonstrate simultaneous surface,
-aerial, and terrestrial assets in a single world. Of the projects we
-survey, VRX is the closest to delivering the multi-domain story end
-to end on an open stack.
+\textbf{VRX (Virtual RobotX)} \autocite{bingham2021vrx} is the most actively maintained marine Gazebo stack we know of. It was originally built for the RobotX Maritime Challenge; modern releases (v3.x, on Gazebo Harmonic and ROS~2 Jazzy) run surface, aerial, and terrestrial assets together in one world. Of the projects in this review, VRX comes closest to delivering the multi-domain story end to end on an open stack.
 
-\textbf{LRAUV simulation} \autocite{player2023lrauv} from MBARI is a
-production-targeted vehicle digital twin used to validate
-long-duration science missions before deployment. The standalone
-\texttt{osrf/lrauv} fork has been upstreamed into Gazebo and was
-archived in 2025; ongoing development continues in the MBARI
-organization.
+\textbf{LRAUV simulation} \autocite{player2023lrauv} from MBARI is a production-targeted digital twin used to validate long-duration science missions before deployment. The standalone \texttt{osrf/lrauv} fork has been upstreamed into Gazebo and was archived in 2025; ongoing development continues in the MBARI organization.
 
 \subsection{Game-engine-based simulators}
 \label{sec:game-engine}
 
-\textbf{HoloOcean}
-\autocite{potokar2022holoocean,potokar2024holoocean} is BYU's
-Unreal-Engine-based underwater simulator and the most cited non-Gazebo
-option in marine perception research. Its 2024 \emph{Journal of
-Oceanic Engineering} release broadens the sensor suite (imaging sonar,
-DVL, side-scan, multibeam); a 2.0 preview targets Unreal~5.3 with a
-ROS~2 bridge.
+\textbf{HoloOcean} \autocite{potokar2022holoocean,potokar2024holoocean} is BYU's Unreal-Engine-based underwater simulator and the most cited non-Gazebo option in marine perception research. Its 2024 \emph{Journal of Oceanic Engineering} release broadens the sensor suite (imaging sonar, DVL, side-scan, multibeam). A 2.0 preview targets Unreal~5.3 with a ROS~2 bridge.
 
-\textbf{OceanSim} \autocite{song2025oceansim} from the Field Robotics
-Group at the University of Michigan ports the underwater perception
-problem onto NVIDIA Isaac Sim, inheriting GPU ray tracing and the
-Omniverse asset pipeline. It is the most credible candidate in this
-list for the third use case of Section~\ref{sec:scope} (vectorized ML
-training). At the time of writing it is underwater-only, but the
-underlying engine supports terrestrial and aerial assets natively and
-the gap is one of marine-domain content rather than engine capability.
+\textbf{OceanSim} \autocite{song2025oceansim} from the Field Robotics Group at the University of Michigan ports the underwater perception problem onto NVIDIA Isaac Sim, inheriting GPU ray tracing and the Omniverse asset pipeline. It is the most credible candidate in this list for the third use case in Section~\ref{sec:scope} (vectorized ML training). At the time of writing it is underwater-only, but the underlying engine supports terrestrial and aerial assets, so the gap is one of marine-domain content rather than engine capability.
 
 \subsection{Standalone hydrodynamics + rendering}
-\textbf{Stonefish} \autocite{cieslak2019stonefish,grimaldi2025stonefish}
-is a self-contained C++/OpenGL simulator from the University of
-Girona, with strong manipulator support and ROS~1/ROS~2 wrappers. Its
-2025 ICRA paper adds ML-oriented sensors (event camera, thermal,
-optical flow, visible-light communication) and frames the project
-explicitly as a substrate for machine-learning research in marine
-robotics. License is GPL-3.0, which is more restrictive than the
-Apache-licensed Gazebo stack and matters for downstream redistribution.
+\textbf{Stonefish} \autocite{cieslak2019stonefish,grimaldi2025stonefish} is a self-contained C++/OpenGL simulator from the University of Girona, with strong manipulator support and ROS~1/ROS~2 wrappers. Its 2025 ICRA paper adds ML-oriented sensors (event camera, thermal, optical flow, visible-light communication) and frames the project explicitly as a substrate for machine-learning research in marine robotics. The license is GPL-3.0, which is more restrictive than the Apache-licensed Gazebo stack and matters for downstream redistribution.
 
 \subsection{Hydrodynamics specialist}
-\textbf{WEC-Sim} \autocite{ruehl2017wecsim} (NREL + Sandia, funded by
-the US DOE Water Power Technologies Office) is the canonical
-open-source wave-energy-converter modeling toolbox. It is a
-MATLAB/Simulink toolchain rather than a robotics simulator, but it is
-the reference for high-fidelity floating-body hydrodynamics and is
-worth keeping in the reading list as a verification target for the
-surface dynamics of robotics simulators.
+\textbf{WEC-Sim} \autocite{ruehl2017wecsim} (NREL + Sandia, funded by the US DOE Water Power Technologies Office) is the canonical open-source wave-energy-converter modeling toolbox. It is a MATLAB/Simulink toolchain rather than a robotics simulator, but it is the reference for high-fidelity floating-body hydrodynamics and is worth keeping on the reading list as a verification target for the surface dynamics of robotics simulators.
 
 % --------------------------------------------------------------------
 \section{Cross-cutting observations}
 \label{sec:observations}
 
 \begin{itemize}[leftmargin=*]
-  \item \textbf{Only VRX currently delivers underwater, surface,
-    aerial, and terrestrial dynamics in a single maintained open
-    stack.} Underwater coverage in VRX is shallow relative to the
-    perception fidelity of HoloOcean or OceanSim, but the multi-domain
-    integration story is unique.
-
-  \item \textbf{Vectorized ML training is best supported by the
-    Isaac-Sim branch (OceanSim) and, to a lesser extent, HoloOcean.}
-    Gazebo's throughput model is not yet aligned with the
-    thousands-of-parallel-worlds idiom that dominates modern RL
-    research.
-
-  \item \textbf{CI/CD adoption favors Gazebo today.} Deterministic
-    headless runs via \texttt{gz sim} are mature, and the same
-    binaries are used in development and CI. Unreal- and Unity-based
-    simulators are harder to package for unattended runs.
-
-  \item \textbf{Documentation quality varies widely.} WEC-Sim,
-    HoloOcean, and VRX have approachable user-facing documentation;
-    Gazebo, DAVE, and Stonefish rely more heavily on source reading
-    and community channels.
-
-  \item \textbf{License diversity matters.} Most of the Gazebo
-    ecosystem and OceanSim are Apache-2.0; HoloOcean is MIT but
-    inherits the Unreal EULA at runtime; Stonefish is GPL-3.0.
-    Downstream redistribution plans should account for this.
+  \item \textbf{Only VRX currently runs underwater, surface, aerial, and terrestrial dynamics in a single maintained open stack.} Its underwater coverage is shallow next to the perception fidelity of HoloOcean or OceanSim, but the multi-domain integration story is uncommon.
+  \item \textbf{Vectorized ML training is best supported on the Isaac-Sim branch (OceanSim) and, to a lesser extent, HoloOcean.} Gazebo's throughput model does not yet match the thousands-of-parallel-worlds idiom that dominates modern RL.
+  \item \textbf{CI/CD adoption favors Gazebo today.} Deterministic headless runs through \texttt{gz sim} are mature, and the same binaries are used in development and CI. Unreal- and Unity-based simulators are harder to package for unattended runs.
+  \item \textbf{Documentation quality varies a lot.} WEC-Sim, HoloOcean, and VRX have approachable user-facing documentation. Gazebo, DAVE, and Stonefish rely more on source reading and community channels.
+  \item \textbf{License diversity matters.} Most of the Gazebo ecosystem and OceanSim are Apache-2.0. HoloOcean is MIT but inherits the Unreal EULA at runtime. Stonefish is GPL-3.0. Downstream redistribution plans need to account for this.
 \end{itemize}
 
 % --------------------------------------------------------------------
 \section{Excluded and adjacent}
 \label{sec:excluded}
 
-The following projects come up in marine-simulator discussions but do
-not currently satisfy our community-size criterion, and so are noted
-rather than reviewed:
+The projects below come up in marine-simulator discussions but do not currently meet the community-size criterion, so they are noted here rather than reviewed.
 
 \begin{itemize}[leftmargin=*]
-  \item \textbf{MARUS} \autocite{loncar2022marus} --- a Unity-based
-    maritime simulator from the University of Zagreb. Promising
-    technical direction but limited adoption outside its originating
-    lab.
-  \item \textbf{Project Aquaticus} \autocite{novitzky2024aquaticus} ---
-    a maritime capture-the-flag testbed originally from MIT and now at
-    USMA West Point, built on MOOS-IvP rather than a 3-D physics
-    simulator. Cite for human-robot teaming context, not as a
-    simulator product.
-  \item \textbf{Cosys-AirSim / ASVSim}
-    \autocite{jansen2023cosysairsim,vanmiddelaar2025asvsim} --- the
-    University of Antwerp's active fork of Microsoft AirSim (archived
-    2022). Predominantly aerial, with a 2025 ASV spinoff. Worth
-    monitoring; we will revisit if the marine layer matures.
+  \item \textbf{MARUS} \autocite{loncar2022marus} --- a Unity-based maritime simulator from the University of Zagreb. Promising technical direction but limited adoption outside its originating lab.
+  \item \textbf{Project Aquaticus} \autocite{novitzky2024aquaticus} --- a maritime capture-the-flag testbed originally from MIT and now at USMA West Point, built on MOOS-IvP rather than a 3-D physics simulator. Cite for human-robot teaming context, not as a simulator product.
+  \item \textbf{Cosys-AirSim / ASVSim} \autocite{jansen2023cosysairsim,vanmiddelaar2025asvsim} --- the University of Antwerp's active fork of Microsoft AirSim (archived 2022). Mostly aerial, with a 2025 ASV spinoff. Worth monitoring; revisit if the marine layer matures.
 \end{itemize}
 
-A useful umbrella reference covering many of these same systems is
-the recent underwater-robotics-simulator review of
-\textcite{aldegheri2025survey}; we treat it as a companion document
-rather than as a replacement for project-by-project assessment.
+A useful umbrella reference that covers many of the same systems is the recent underwater-robotics-simulator review of \textcite{aldegheri2025survey}. We treat it as a companion document rather than a replacement for project-by-project assessment.
 
 % --------------------------------------------------------------------
 \section{Contributors and contact}
 \label{sec:contributors}
 
-This document is a living working review.  Contributors are listed
-below with the area they were responsible for; please contact the
-relevant person before making substantive edits in their section so
-we keep the annotations coherent.
+This is a living working review. Contributors are listed below with the area they were responsible for. Please contact the relevant person before making substantive edits in their section so the annotations stay coherent.
 
 \begin{center}
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.27\textwidth}
-                  >{\raggedright\arraybackslash}p{0.30\textwidth}
-                  >{\raggedright\arraybackslash}p{0.32\textwidth}@{}}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.27\textwidth} >{\raggedright\arraybackslash}p{0.30\textwidth} >{\raggedright\arraybackslash}p{0.32\textwidth}@{}}
 \toprule
 \textbf{Contributor} & \textbf{Contact} & \textbf{Area} \\
 \midrule
-Brian Bingham &
-\href{mailto:briansbingham@gmail.com}{briansbingham@gmail.com} &
-Overall editor; Gazebo and VRX sections \\
+Brian Bingham & \href{mailto:briansbingham@gmail.com}{briansbingham@gmail.com} & Overall editor; Gazebo and VRX sections \\
 \addlinespace
-\textit{(open)} & \textit{(open)} &
-Underwater perception (HoloOcean, OceanSim, Stonefish) \\
+\textit{(open)} & \textit{(open)} & Underwater perception (HoloOcean, OceanSim, Stonefish) \\
 \addlinespace
-\textit{(open)} & \textit{(open)} &
-Hydrodynamics and surface dynamics (WEC-Sim, LRAUV) \\
+\textit{(open)} & \textit{(open)} & Hydrodynamics and surface dynamics (WEC-Sim, LRAUV) \\
 \addlinespace
-\textit{(open)} & \textit{(open)} &
-ML training infrastructure and vectorized environments \\
+\textit{(open)} & \textit{(open)} & ML training infrastructure and vectorized environments \\
 \bottomrule
 \end{tabular}
 \end{center}
