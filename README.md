@@ -30,11 +30,10 @@ literature_review/     Annotated literature review of open-source ocean simulato
 
 ## Building the documents
 
-Both documents are plain LaTeX. From inside each folder:
+Both documents are plain LaTeX. From inside each folder, e.g.l, 
 
 ```bash
-pdflatex proposal.tex && pdflatex proposal.tex          # proposal
-latexmk -pdf lit_review.tex                              # literature review (uses biber)
+latexmk -pdf proposal.tex
 ```
 
 
