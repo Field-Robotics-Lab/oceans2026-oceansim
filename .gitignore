@@ -68,3 +68,6 @@ _minted*
 
 # Keep rendered PDFs in the repo (proposal.pdf, lit_review.pdf, etc.).
 !*.pdf
+
+# Private working notes — kept locally, do not publish.
+sim_review/
