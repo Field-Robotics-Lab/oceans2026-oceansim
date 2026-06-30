@@ -2,7 +2,17 @@
 
 Working repository for a proposed half-day workshop at **IEEE OCEANS 2026 Monterey** on open-source, multi-domain simulation for ocean robotics.
 
-**Status:** work in progress. We are currently **soliciting co-organizers** and feedback on the workshop scope before the OCEANS proposal deadline of **26 May 2026**. If you maintain or use one of the active open-source ocean-simulation stacks (Gazebo-based, game-engine-based, or otherwise), we would like to hear from you — open an issue, send a pull request, or email Brian.
+**Status:** **accepted.** The workshop has been accepted for OCEANS 2026 Monterey and is scheduled for **Monday, 21 September 2026**. We are now **soliciting co-organizers, speakers, and contributors** and building out the workshop website. If you maintain or use one of the active open-source ocean-simulation stacks (Gazebo-based, game-engine-based, or otherwise), we would like to hear from you: open an issue, send a pull request, or email Brian.
+
+## Key dates
+
+| Date | Item |
+| --- | --- |
+| 2 July 2026 (EOD PST) | Confirm participation with the organizing committee |
+| 10 July 2026 (EOD) | Post the workshop website and send the link to the OCEANS organizers |
+| 21 September 2026 | Workshop day (half day) at OCEANS 2026 Monterey |
+
+After the website link is submitted, registration will include the workshop and we can begin recruiting pre-registrants. The workshop requires a minimum number of pre-registrants (indicating their preference for it during OCEANS registration) in order to be held.
 
 ## What the workshop is about
 
