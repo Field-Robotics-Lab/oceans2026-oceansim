@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<!--
+  OCEANS 2026 Monterey workshop site.
+  Single self-contained page: edit the text directly below, no build step needed.
+  Sections are plain HTML; the top nav links to the section ids (home/dates/speakers/schedule/organizers).
+  To add a speaker or organizer, copy one card block and fill it in.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multi-Domain Open Simulation for Ocean Robotics — OCEANS 2026 Workshop</title>
+  <meta name="description" content="A half-day workshop at IEEE OCEANS 2026 Monterey on open, multi-domain simulation for ocean robotics. Monday 21 September 2026.">
+  <meta property="og:title" content="Multi-Domain Open Simulation for Ocean Robotics">
+  <meta property="og:description" content="A half-day workshop at IEEE OCEANS 2026 Monterey. Monday 21 September 2026.">
+  <meta property="og:type" content="website">
+  <style>
+    :root {
+      --ink: #16242f;
+      --muted: #5b6b78;
+      --accent: #0b6e8f;
+      --accent-dark: #084f68;
+      --band: #eef3f6;
+      --line: #d8e0e6;
+      --maxw: 880px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #fff;
+      font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Sticky top navigation */
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: saturate(180%) blur(6px);
+    }
+    nav ul {
+      max-width: var(--maxw); margin: 0 auto; padding: 0 20px;
+      display: flex; flex-wrap: wrap; gap: 4px 22px;
+      list-style: none; align-items: center; min-height: 54px;
+    }
+    nav a {
+      color: var(--ink); font-weight: 600; font-size: 15px;
+      letter-spacing: .01em; padding: 8px 0;
+    }
+    nav a:hover { color: var(--accent); text-decoration: none; }
+    nav .brand { margin-right: auto; font-weight: 700; color: var(--accent-dark); }
+
+    /* Hero */
+    header.hero {
+      background: var(--band);
+      border-bottom: 1px solid var(--line);
+      padding: 54px 20px 46px;
+      text-align: center;
+    }
+    header.hero h1 {
+      max-width: var(--maxw); margin: 0 auto 8px;
+      font-size: clamp(26px, 4vw, 38px); line-height: 1.2;
+    }
+    header.hero .subtitle { color: var(--muted); font-size: 19px; margin: 0 auto 18px; max-width: 720px; }
+    header.hero .meta { font-weight: 600; }
+    header.hero .meta span { color: var(--accent-dark); }
+    .buttons { margin-top: 22px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; padding: 10px 18px; border-radius: 7px;
+      background: var(--accent); color: #fff; font-weight: 600; font-size: 15px;
+    }
+    .btn:hover { background: var(--accent-dark); text-decoration: none; }
+    .btn.secondary { background: #fff; color: var(--accent-dark); border: 1px solid var(--accent); }
+
+    /* Sections */
+    section {
+      max-width: var(--maxw); margin: 0 auto; padding: 48px 20px 8px;
+      scroll-margin-top: 64px;
+    }
+    section h2 {
+      font-size: 24px; margin: 0 0 16px;
+      padding-bottom: 8px; border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+    .note { color: var(--muted); font-style: italic; }
+
+    /* Dates table */
+    table { width: 100%; border-collapse: collapse; margin: 6px 0 12px; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { background: var(--band); font-size: 14px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+    .schedule td:first-child { white-space: nowrap; font-weight: 600; width: 130px; color: var(--accent-dark); }
+
+    /* Card grids (speakers / projects / organizers) */
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 8px; }
+    .card { border: 1px solid var(--line); border-radius: 9px; padding: 16px 18px; background: #fff; }
+    .card h3 { margin: 0 0 2px; font-size: 18px; }
+    .card .aff { color: var(--muted); font-size: 14.5px; margin: 0 0 8px; }
+    .card p.bio { margin: 8px 0 0; font-size: 15px; line-height: 1.55; }
+    .tag {
+      display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .03em;
+      text-transform: uppercase; color: var(--accent-dark); background: var(--band);
+      border-radius: 20px; padding: 3px 10px; margin-bottom: 6px;
+    }
+    .tba { color: var(--muted); font-weight: 600; }
+
+    footer {
+      margin-top: 48px; border-top: 1px solid var(--line); background: var(--band);
+      padding: 28px 20px; text-align: center; color: var(--muted); font-size: 14.5px;
+    }
+
+    @media (max-width: 640px) {
+      .grid { grid-template-columns: 1fr; }
+      nav .brand { width: 100%; margin-bottom: 2px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li class="brand">OceanSim Workshop</li>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#dates">Dates</a></li>
+    <li><a href="#speakers">Invited Speakers</a></li>
+    <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#organizers">Organizers</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="home">
+  <h1>Multi-Domain Open Simulation for Ocean Robotics</h1>
+  <p class="subtitle">State of Practice and a Community Roadmap</p>
+  <p class="meta">A half-day workshop at <span>IEEE OCEANS 2026 Monterey</span><br>Monday, 21 September 2026</p>
+  <div class="buttons">
+    <a class="btn" href="assets/proposal.pdf">Proposal (PDF)</a>
+    <a class="btn secondary" href="https://github.com/Field-Robotics-Lab/oceans2026-oceansim">GitHub repository</a>
+  </div>
+</header>
+
+<!-- ============ HOME / OVERVIEW ============ -->
+<section id="overview">
+  <h2>Overview</h2>
+  <p>
+    For ground and aerial autonomy, simulation is part of the daily development cycle, and
+    tools such as CARLA, AirSim, and Isaac Sim are now common ground across research groups,
+    vendors, and program offices. Ocean robotics has the same need. Surface, underwater, and
+    maritime aerial systems must be tested across distances, durations, and weather and sea
+    states that on-water trials cannot reach, and the same simulators are increasingly asked
+    to produce synthetic data for machine-learning perception pipelines.
+  </p>
+  <p>
+    The current state of practice in ocean simulation is fragmented. Several open-source
+    projects each cover part of the problem, but no single project today plays the role that
+    CARLA or AirSim play for the driving and aerial communities, and federated one-off funding
+    for individual simulators has slowed convergence. OCEANS 2026 in Monterey gathers the
+    academic, naval, industrial, and ocean-instrumentation groups whose combined needs define
+    what an ocean simulator has to be, which makes it the right venue for this conversation.
+  </p>
+  <h3 style="margin-bottom:4px;">Objectives</h3>
+  <ul>
+    <li><strong>Refine what we mean by "ocean sim."</strong> Agree on what the simulation stack
+      must do, end to end, to support both autonomy development and synthetic-data generation for ML training.</li>
+    <li><strong>Summarize the state of the art and the state of practice.</strong> Produce a
+      current, citable snapshot of the active open-source multi-domain marine simulators.</li>
+    <li><strong>Draft a short community roadmap.</strong> Identify the gaps the community should
+      jointly invest in next, usable as a reference for funding agencies (ONR, DARPA, NSF) and upstream maintainers.</li>
+  </ul>
+</section>
+
+<!-- ============ DATES ============ -->
+<section id="dates">
+  <h2>Important Dates</h2>
+  <table>
+    <tr>
+      <td>Registration opening</td>
+      <td class="tba">TBA &middot; via OCEANS 2026 registration <span class="note">(placeholder)</span></td>
+    </tr>
+    <tr>
+      <td><strong>Monday, 21 September 2026</strong></td>
+      <td><strong>Workshop day</strong> at OCEANS 2026 Monterey</td>
+    </tr>
+  </table>
+  <p class="note">Additional dates (e.g. registration deadline) will be added once confirmed.</p>
+</section>
+
+<!-- ============ INVITED SPEAKERS ============ -->
+<section id="speakers">
+  <h2>Invited Speakers</h2>
+  <p>
+    The program features one invited speaker per active project, paired across Gazebo-based and
+    game-engine-based stacks. Speakers will be announced here as they are confirmed.
+  </p>
+  <div class="grid">
+    <!-- Copy a card to add/confirm a speaker. Replace "Speaker TBA" with name + link. -->
+    <div class="card">
+      <span class="tag">Gazebo-based</span>
+      <h3>VRX</h3>
+      <p class="aff">Virtual RobotX</p>
+      <p class="bio"><span class="tba">Speaker TBA</span></p>
+    </div>
+    <div class="card">
+      <span class="tag">Gazebo-based</span>
+      <h3>DAVE</h3>
+      <p class="aff">DAVE Aquatic Virtual Environment</p>
+      <p class="bio"><span class="tba">Speaker TBA</span></p>
+    </div>
+    <div class="card">
+      <span class="tag">Gazebo-based</span>
+      <h3>MBARI LRAUV</h3>
+      <p class="aff">Long-Range AUV simulation</p>
+      <p class="bio"><span class="tba">Speaker TBA</span></p>
+    </div>
+    <div class="card">
+      <span class="tag">Game engine</span>
+      <h3>HoloOcean</h3>
+      <p class="aff">Unreal Engine</p>
+      <p class="bio"><span class="tba">Speaker TBA</span></p>
+    </div>
+    <div class="card">
+      <span class="tag">Game engine</span>
+      <h3>OceanSim</h3>
+      <p class="aff">NVIDIA Isaac Sim</p>
+      <p class="bio"><span class="tba">Speaker TBA</span></p>
+    </div>
+    <div class="card">
+      <span class="tag">Specialist</span>
+      <h3>Stonefish &amp; WEC-Sim</h3>
+      <p class="aff">Standalone simulator; hydrodynamics verification reference</p>
+      <p class="bio"><span class="tba">Speaker TBA</span></p>
+    </div>
+  </div>
+  <p class="note" style="margin-top:14px;">
+    A practitioner talk from an ocean-autonomy program that uses simulation in production is also planned.
+  </p>
+</section>
+
+<!-- ============ SCHEDULE ============ -->
+<section id="schedule">
+  <h2>Schedule</h2>
+  <p>Half day: about 3.5 hours plus a 30-minute coffee break. Times are relative to the start.</p>
+  <table class="schedule">
+    <tr><td>00:00–00:15</td><td><strong>Welcome.</strong> Scope of "multi-domain ocean sim" and the working inclusion criteria.</td></tr>
+    <tr><td>00:15–01:30</td><td><strong>State of the art and state of practice.</strong> Short invited talks (12–15 min) from one representative per active project, paired across Gazebo-based and game-engine-based stacks.</td></tr>
+    <tr><td>01:30–02:00</td><td><strong>Coffee break</strong> and informal discussion.</td></tr>
+    <tr><td>02:00–02:45</td><td><strong>Synthetic data and ML training panel.</strong> How each stack handles vectorized environments and perception-data generation, with a moderated comparison.</td></tr>
+    <tr><td>02:45–03:30</td><td><strong>Roadmap working session.</strong> Breakouts on (i) fidelity gaps, (ii) tooling and CI, (iii) funding model and governance.</td></tr>
+    <tr><td>03:30–03:45</td><td><strong>Close.</strong> Assignment of section editors for the post-workshop white paper.</td></tr>
+  </table>
+</section>
+
+<!-- ============ ORGANIZERS ============ -->
+<section id="organizers">
+  <h2>Organizers</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Brian Bingham</h3>
+      <p class="aff">Naval Postgraduate School, Monterey, CA, USA</p>
+      <p class="bio">Professor at the Naval Postgraduate School working on marine robotics, autonomy,
+        and the simulation tools that support both. His current focus is on what fidelity is
+        actually needed for ocean simulation to serve as a daily tool for autonomy development.</p>
+    </div>
+    <div class="card">
+      <h3>Christine Buzzell</h3>
+      <p class="aff">Office of Naval Research (ONR), Arlington, VA, USA</p>
+      <p class="bio">ONR Autonomy Focus Area Lead, leading a team of Program Officers defining the
+        roadmap for autonomy development. As a Program Officer in the Advanced Naval Platforms
+        Division (331) she manages multiple maritime-autonomy programs. She brings a funding-agency
+        perspective on shared infrastructure for marine autonomy and how it should be sustained.</p>
+    </div>
+    <div class="card">
+      <h3>Joshua Mangelson</h3>
+      <p class="aff">Brigham Young University, Provo, UT, USA</p>
+      <p class="bio">Assistant Professor of Electrical and Computer Engineering at BYU, where he
+        founded and directs the Field Robotic Systems (FRoSt) Lab. The lab develops and maintains
+        HoloOcean, an Unreal-Engine-based marine robotics simulator. He received his PhD and MS in
+        Robotics from the University of Michigan.</p>
+    </div>
+    <div class="card">
+      <h3>Evan Palmer</h3>
+      <p class="aff">Oregon State University, Corvallis, OR, USA</p>
+      <p class="bio">Robotics Ph.D. student studying the intersection of geometric methods and
+        machine learning for underwater vehicles, leveraging marine robotics simulation to bridge
+        theory and field deployment. He is a former co-organizer of the ROS Maritime Community Group.</p>
+    </div>
+    <div class="card">
+      <h3>Ivan Stenius</h3>
+      <p class="aff">KTH Royal Institute of Technology, Stockholm, Sweden</p>
+      <p class="bio">Associate Professor in Naval Architecture at KTH. His work spans marine robotics,
+        underwater vehicle design, modelling, manoeuvring, navigation, and simulation-supported
+        autonomy. Since initiating the Swedish Maritime Robotics Centre (SMaRC) in 2017, he has
+        pushed simulated environments as a practical tool for underwater robotics development.</p>
+    </div>
+    <div class="card">
+      <h3>Mabel Zhang</h3>
+      <p class="aff">Anduril Industries, Boston, MA, USA</p>
+      <p class="bio">Former core developer and maintainer of ROS 2 and Gazebo at the Open Source
+        Robotics Foundation (2019–2024), collaborating with marine simulators including DAVE, VRX,
+        the MBARI Long-Range AUV simulator, and the MBARI Wave Energy Converter simulator. She now
+        works on safety-critical software certification for AUVs.</p>
+    </div>
+  </div>
+  <p class="note" style="margin-top:14px;">
+    Additional organizers are being recruited through the public repository before the camera-ready submission.
+  </p>
+</section>
+
+<footer>
+  <p>
+    <strong>Get involved:</strong>
+    <a href="https://github.com/Field-Robotics-Lab/oceans2026-oceansim/issues">open an issue</a>
+    with your name, affiliation, and how you would like to help, or email
+    <a href="mailto:bbingham@nps.edu">bbingham@nps.edu</a>.
+  </p>
+  <p>Brian Bingham, Naval Postgraduate School &middot; OCEANS 2026 Monterey</p>
+</footer>
+
+</body>
+</html>
