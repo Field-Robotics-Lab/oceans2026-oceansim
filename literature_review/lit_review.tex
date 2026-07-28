@@ -39,12 +39,13 @@ This is a working literature review of open-source simulation frameworks usable 
 \section{Scope and motivation}
 \label{sec:scope}
 
-We care about simulators that have to serve three use cases. Each one puts different pressure on the underlying tool.
+We care about simulators that have to serve four use cases. Each one puts different pressure on the underlying tool.
 
 \begin{enumerate}[leftmargin=*]
   \item \textbf{Manual, in-the-loop development and operator training.} The simulator is a visual and dynamic sandbox in which a human iterates on algorithms, missions, or operator procedures. What matters here is rendering, asset availability, and ergonomics. Raw throughput is secondary.
   \item \textbf{Continuous-integration regression testing for software safety.} The simulator has to run headless, has to be deterministic, has to be fast enough to gate merges, and has to stay stable across OS upgrades. What matters here is reproducibility and packaging. Visual polish does not.
   \item \textbf{Vectorized training for machine-learning research.} The simulator is treated as a parallelizable environment factory. What matters here is steps per wall-second across many concurrent worlds, GPU acceleration, deterministic resets, and a Python-native interface.
+  \item \textbf{Mission-plan validation.} The simulator runs a full mission end to end to catch faults in the \emph{plan}---grounding, collision, energy- or time-budget blowouts, contingency-logic errors, missed communication windows---before deployment. What matters here is faster-than-real-time, long-horizon, deterministic execution, since ocean missions run for tens of hours to weeks. This is the use case where the marine domain diverges most sharply from its short-mission aerial and ground neighbors.
 \end{enumerate}
 
 Our domain of interest is \emph{multi-domain ocean robotics}: a single simulated world that may contain assets operating underwater, on the water surface, in the air, and on land, interacting through a shared environment (for example, a USV launching a UAV that overflies a shoreline sensor while an AUV operates below the surface).
