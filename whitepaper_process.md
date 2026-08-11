@@ -19,7 +19,7 @@ This document is a living draft to align our efforts. Please contribute to that 
 - **Convergence and commitment.** The room is experts; the highest-value work is to prioritize, decide, and commit. Where the experts genuinely disagree on priorities is an important signal to capture.
 - **Discussion-first format.** Minimal lecturing, mostly small-group work against pre-defined topics with key questions, with small groups reporting back to the whole room.
 - **Two-layer taxonomy.** A clean *seed* set of topics organizes the sessions; expect the *write-up* to reorganize around whatever cross-cutting problems actually emerge. Design note-taking so that regrouping is possible afterward.
-- **Pre-work is decisive.** Each event is only a half day; whatever isn't framed beforehand won't get resolved in real time in the room.
+- **Preparation is necessary.** Each event is only a half day; whatever isn't framed beforehand won't get resolved in real time in the room.
 - **Transparent, lead-driven drafting** (MARE model): a named lead editor drives, section owners write, the broad group reviews, and every key step is circulated.
 - **Speed over polish for v1:** arXiv first (weeks, not the ~year a journal took MARE), refine toward a journal version afterward if we want one.
 
@@ -40,30 +40,30 @@ This document is a living draft to align our efforts. Please contribute to that 
 
 ## Milestone 1 — Pre-workshop framing (now → 21 Sep)
 
-The curation the organizers commit to *before* the room convenes. The question "how far down the definition route do we go?" is answered here.
 
-**We (organizers) curate:**
-- A **working definition** and bounding box for "maritime robotic simulation" — the `scope_and_framework.md` draft (definition, the three axes, gates vs. priorities). Offered as a *starting frame to react to*, not a settled position.
-- A **seed set of discussion topics** with a few key questions each, to organize breakouts. Pull candidate topics from the capability areas already sketched (multi-domain coverage, fidelity-to-purpose, stack interoperability / shared substrate, extensibility, project health & sustainment, sim-to-real / validation) and the maritime-distinctive requirements (long-endurance / faster-than-real-time, underwater sensing).
-- A **common lightning-talk template** (≈5 min, status update per project) with the same per-project questions, so project inputs are comparable.
-- The **split of labor** between OCEANS (production) and AQUASIM (research) mapped onto the seed topics, so the two half-days compound.
+**Organizers curate:**
+- **Sorking definition** and bounding box for "maritime robotic simulation" — the `scope_and_framework.md` draft (definition, the three axes, gates vs. priorities). 
+- **Discussion topics** with a few key questions each, to organize breakouts. Pull candidate topics from the capability areas already sketched (multi-domain coverage, fidelity-to-purpose, stack interoperability / shared substrate, extensibility, project health & sustainment, sim-to-real / validation) and the maritime-distinctive requirements (long-endurance / faster-than-real-time, underwater sensing).
+- **Lightning-talk template** (≈5 min, status update per project) with the same per-project questions, so project inputs are comparable.
+
 
 **We deliberately leave open (for the workshops to develop):**
-- The **ranking of priorities** and how they are articulated in the roadmap.
-- The **final structure** of the whitepaper (expected to emerge from cross-cutting problems).
+- **Ranking of priorities** and how they are articulated in the roadmap.
+- **Final structure** of the whitepaper (expected to emerge from cross-cutting problems).
 - **Contested definitions / scope edges** — surfaced as questions, and as areas where clarification would help.
 - **Which projects/approaches matter most.** We seed the discussion with a set of *surrogate / exemplar* projects chosen to span the design space — not an exhaustive catalog, and not ranked; the workshop weighs their relative importance.
 
 ## Milestone 2 — OCEANS workshop activities (21 Sep)
 
-Proposed format for the **OCEANS** session, adapted from MARE-Madeira and compressed to a half day. (OCEANS proposal only — AQUASIM runs its own agenda and may reuse parts of this, but the two are not formally coupled; they simply hope to share the paper as an output.) 
+Proposed format for the **OCEANS** session, adapted from MARE-Madeira and compressed to a half day. 
 
 - **Whole-group opening (short):** scope frame + the seed topics, so everyone is oriented to all of them before splitting. State ground rules so all voices are heard, and that the aim is to prioritize, decide, and commit.
-- **Lightning talks:** brief, templated project status updates — context, not the main event.
-- **Small-group working sessions** on the seed topics, each with a moderator + scribe and key questions, driving toward *decisions*: the top gaps, how they rank, and where the group disagrees. Then **report-back to the whole room** to converge — or to record the disagreement.
-- **Capture discipline:** standardized notes per group, ideally audio + auto-transcript, because the write-up will regroup the raw material later.
+- **Lightning talks:** brief, templated project status updates — context.
+- **Small-group working sessions** on the discussion topics, each with a moderator + scribe and key questions, driving toward *decisions*: the top gaps, how they rank, and where the group disagrees. Then **report-back to the whole room** to converge — or to record the disagreement.
 - **Close:** each group names the cross-cutting problems and the one or two things the roadmap must say; volunteers self-identify for section authorship.
-- **OCEANS → AQUASIM handoff (informal):** in the ~10-day gap, share a short brief of OCEANS outputs (research questions raised, production gaps found) so AQUASIM can build on it if useful — a courtesy, not a dependency.
+- **OCEANS → AQUASIM handoff (informal):** in the ~10-day gap, share a short brief of OCEANS outputs (research questions raised, production gaps found) so AQUASIM can build on it.
+
+Note: To be effective, need to standardized notes per group, ideally audio + auto-transcript.
 
 ## Milestone 3 — Post-workshop writing (Oct → Dec)
 
@@ -86,5 +86,5 @@ Each role, with how and when it's filled:
 - **Section owners** — own and write sections. *Self-identify at each workshop's close (Milestone 2), confirmed during Consolidate (mid–late Oct).*
 - **Broad reviewers** — add ideas, review. *Recruited from workshop participants and community sign-ups; set by the end of the workshops.*
 - **Per-breakout moderators + scribes** — run and capture the sessions. *Assigned by the organizers as pre-work (Milestone 1), before each workshop.*
-- **Bridge/coordinator** — keep OCEANS and AQUASIM aligned. *Mabel, now.*
+- **Bridge/coordinator** — keep OCEANS and AQUASIM aligned. *Mabel?*
  
