@@ -5,8 +5,8 @@ Companion to [`whitepaper_process.md`](whitepaper_process.md). Captures the rese
 ## Where things stand
 
 - **`scope_and_framework.md`** — the scope/framing draft (working definition, three axes of distinction, gate vs. priority scope test, C1–C6 capability rubric). Committed. This is the pre-workshop framing that seeds the discussion topics.
-- **`whitepaper_process.md`** — the backwards-planned process for the joint whitepaper: goal/fixed points, what the workshops produce, guiding principles, timeline, the three milestones (pre-workshop framing → OCEANS workshop activities → post-workshop writing), roles, and the six decisions. Committed.
-- The **six decisions** are recorded at the bottom of `whitepaper_process.md`: aspire to one joint paper (accept one-or-two), community-facing but funder-liftable, journal aspirational / arXiv realistic, governance left ambiguous, email comms (Brian setting up), biweekly meeting confirmed.
+- **`whitepaper_process.md`** — the backwards-planned process for the joint whitepaper: goal/fixed points, what the workshops produce, guiding principles, timeline, the three milestones (pre-workshop framing → OCEANS workshop activities → post-workshop writing), and roles. Committed. It is framed as community-facing (for contribution), so settled organizer decisions are kept out of it.
+- The **organizer decisions** (paper count, audience/framing, venue, governance, comms, cadence) are kept in a local, uncommitted file (`whitepaper_decisions.local.md`, gitignored) — deliberately out of the public repo, so they do not travel with it.
 
 ## The collaboration (as of the 7 Aug 2026 thread)
 

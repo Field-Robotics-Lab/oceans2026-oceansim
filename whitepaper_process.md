@@ -1,37 +1,26 @@
 # Joint Whitepaper Process — OCEANS Sim × AQUASIM
 
-Working process outline (discussion draft) for producing a **joint community whitepaper / roadmap** for maritime robotic simulation, as the shared output of the OCEANS 2026 Sim workshop and AQUASIM v.2 (IROS 2026). 
-
-## How to contribute
-
-This is a living draft. To contribute:
-
-- **Edit or comment directly** in the repo (a wording fix as a pull request; a reaction as an inline comment).
-- **Raise a larger objection** — to a principle, a milestone, or the whole structure — as a GitHub issue or in the standing meeting, so it's tracked rather than lost in a thread. The structure here is not settled.
-- **Bring project-specific input** (topics, questions, speakers) to the shared planning doc.
-
-## Goal and fixed points
+The workshops' objectives are to move the community toward a shared plan. Through focused discussion, project comparison, and prioritization, participants build alignment on the highest-value directions for maritime robotic simulation. The output is a citable roadmap that records those shared priorities and the collaborations formed to act on them.
 
 - **Deliverable:** joint whitepaper/roadmap, released to arXiv, with an optional journal submission to follow.
 - **Target release:** end of December 2026 — roughly three months after the workshops.
-- **Two half-day workshops feed it:**
-  - **OCEANS Sim** — Mon 21 Sep 2026, Monterey (~4 hr). Emphasis: higher-TRL, production / community-tested simulators.
-  - **AQUASIM v.2** — ~1 Oct 2026, IROS, Pittsburgh (half day). Emphasis: cutting-edge / prototype research simulators.
- 
 
-## What the workshops produce
+## Draft process - How to contribute
 
-The workshops' objectives are to move the community toward a shared plan. Through focused discussion, project comparison, and prioritization, participants build alignment on the highest-value directions for maritime robotic simulation. The output is a citable roadmap that records those shared priorities and the collaborations formed to act on them.
+This document is a living draft to align our efforts. Please contribute to that alignment by reviewing and contributing:
 
+- **Edit or comment directly** in the repo (a wording fix as a pull request; a reaction as an inline comment).
+- **Raise a larger opportunity or objection** — to a principle, a milestone, or the whole structure — as a GitHub issue or in the standing meeting, so it's tracked rather than lost in a thread. The structure here is not settled.
+- **Bring project-specific input** (topics, questions, speakers) to the shared planning doc.
 
 ## Guiding principles
 
-- **Curate enough to move, not enough to pre-decide.** Organizers supply the *vocabulary and the questions*; the *priorities and the roadmap content* are developed by the workshops. 
-- **Convergence and commitment.** The room is experts; the highest-value work is to prioritize, decide, and commit. Where the experts genuinely disagree on priorities is the signal to surface and resolve.
+- **Curate enough to move, not enough to pre-decide.** Organizers supply the *vocabulary and the questions*; the *priorities and the roadmap content* are developed by the workshops.
+- **Convergence and commitment.** The room is experts; the highest-value work is to prioritize, decide, and commit. Where the experts genuinely disagree on priorities is an important signal to capture.
 - **Discussion-first format.** Minimal lecturing, mostly small-group work against pre-defined topics with key questions, with small groups reporting back to the whole room.
 - **Two-layer taxonomy.** A clean *seed* set of topics organizes the sessions; expect the *write-up* to reorganize around whatever cross-cutting problems actually emerge. Design note-taking so that regrouping is possible afterward.
-- **Pre-work is decisive.** Each event is only a half day; whatever isn't framed beforehand won't get resolved in the room.
-- **Transparent, lead-driven drafting** (MARE model, not the opaque "roadmap synthesis" model): a named lead editor drives, section owners write, the broad group reviews, and every key step is circulated.
+- **Pre-work is decisive.** Each event is only a half day; whatever isn't framed beforehand won't get resolved in real time in the room.
+- **Transparent, lead-driven drafting** (MARE model): a named lead editor drives, section owners write, the broad group reviews, and every key step is circulated.
 - **Speed over polish for v1:** arXiv first (weeks, not the ~year a journal took MARE), refine toward a journal version afterward if we want one.
 
 ## Timeline (planned backwards)
@@ -55,19 +44,19 @@ The curation the organizers commit to *before* the room convenes. The question "
 
 **We (organizers) curate:**
 - A **working definition** and bounding box for "maritime robotic simulation" — the `scope_and_framework.md` draft (definition, the three axes, gates vs. priorities). Offered as a *starting frame to react to*, not a settled position.
-- A **seed set of discussion topics** with a few key questions each — scaffolding to organize breakouts. Draw candidates from the capability areas already sketched (multi-domain coverage, fidelity-to-purpose, stack interoperability / shared substrate, extensibility, project health & sustainment, sim-to-real / validation) and the maritime-distinctive requirements (long-endurance / faster-than-real-time, underwater sensing).
+- A **seed set of discussion topics** with a few key questions each, to organize breakouts. Pull candidate topics from the capability areas already sketched (multi-domain coverage, fidelity-to-purpose, stack interoperability / shared substrate, extensibility, project health & sustainment, sim-to-real / validation) and the maritime-distinctive requirements (long-endurance / faster-than-real-time, underwater sensing).
 - A **common lightning-talk template** (≈5 min, status update per project) with the same per-project questions, so project inputs are comparable.
 - The **split of labor** between OCEANS (production) and AQUASIM (research) mapped onto the seed topics, so the two half-days compound.
 
 **We deliberately leave open (for the workshops to develop):**
-- The **ranking of priorities** and what the roadmap should push funders toward.
+- The **ranking of priorities** and how they are articulated in the roadmap.
 - The **final structure** of the whitepaper (expected to emerge from cross-cutting problems).
-- **Contested definitions / scope edges** — surfaced as questions, not resolved by fiat.
-- Which projects/approaches matter most — described, not judged, going in.
+- **Contested definitions / scope edges** — surfaced as questions, and as areas where clarification would help.
+- **Which projects/approaches matter most.** We seed the discussion with a set of *surrogate / exemplar* projects chosen to span the design space — not an exhaustive catalog, and not ranked; the workshop weighs their relative importance.
 
 ## Milestone 2 — OCEANS workshop activities (21 Sep)
 
-Proposed format for the **OCEANS** session, adapted from MARE-Madeira and compressed to a half day. (OCEANS proposal only — AQUASIM runs its own agenda and may reuse parts of this, but the two are not formally coupled; they simply share the paper as an output.) 
+Proposed format for the **OCEANS** session, adapted from MARE-Madeira and compressed to a half day. (OCEANS proposal only — AQUASIM runs its own agenda and may reuse parts of this, but the two are not formally coupled; they simply hope to share the paper as an output.) 
 
 - **Whole-group opening (short):** scope frame + the seed topics, so everyone is oriented to all of them before splitting. State ground rules so all voices are heard, and that the aim is to prioritize, decide, and commit.
 - **Lightning talks:** brief, templated project status updates — context, not the main event.
@@ -98,14 +87,4 @@ Each role, with how and when it's filled:
 - **Broad reviewers** — add ideas, review. *Recruited from workshop participants and community sign-ups; set by the end of the workshops.*
 - **Per-breakout moderators + scribes** — run and capture the sessions. *Assigned by the organizers as pre-work (Milestone 1), before each workshop.*
 - **Bridge/coordinator** — keep OCEANS and AQUASIM aligned. *Mabel, now.*
-
-## Decisions and working stances
-
-These were the open questions; here is where we have landed (adaptable as things evolve):
-
-1. **Paper count.** Aspiration is a single joint paper (avoids reinforcing "fragmentation"); reality may be one or two, and we will adapt.
-2. **Audience & framing.** Written as a **community-facing** artifact — deliberately, so funders can pick it up and say "look what the community did." More powerful than addressing funders directly.
-3. **Venue.** A journal is the stated goal (aspirational); realistically we will likely release on arXiv.
-4. **Lead / governance.** Left intentionally ambiguous for now, to adapt as things evolve.
-5. **Comms.** Email (core + broad threads); being set up separately.
-6. **Meeting cadence.** Biweekly inter-workshop standing meeting (~4 before OCEANS) — confirmed. 
+ 

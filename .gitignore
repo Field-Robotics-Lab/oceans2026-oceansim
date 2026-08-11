@@ -71,3 +71,4 @@ _minted*
 
 # Private working notes — kept locally, do not publish.
 sim_review/
+*.local.md
