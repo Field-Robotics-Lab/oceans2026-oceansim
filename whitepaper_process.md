@@ -1,6 +1,6 @@
 # Joint Whitepaper Process — OCEANS Sim × AQUASIM
 
-Working process outline (discussion draft) for producing a **joint community whitepaper / roadmap** for maritime robotic simulation, as the shared output of the OCEANS 2026 Sim workshop and AQUASIM v.2 (IROS 2026). Planned backwards from the delivery date. This is a discussion draft — argue with it, edit it.
+Working process outline (discussion draft) for producing a **joint community whitepaper / roadmap** for maritime robotic simulation, as the shared output of the OCEANS 2026 Sim workshop and AQUASIM v.2 (IROS 2026). 
 
 ## How to contribute
 
