@@ -42,7 +42,7 @@ This document is a living draft to align our efforts. Please contribute to that 
 
 
 **Organizers curate:**
-- **Sorking definition** and bounding box for "maritime robotic simulation" — the `scope_and_framework.md` draft (definition, the three axes, gates vs. priorities). 
+- **Working definition** and bounding box for "maritime robotic simulation" — the `scope_and_framework.md` draft (definition, the three axes, gates vs. priorities). 
 - **Discussion topics** with a few key questions each, to organize breakouts. Pull candidate topics from the capability areas already sketched (multi-domain coverage, fidelity-to-purpose, stack interoperability / shared substrate, extensibility, project health & sustainment, sim-to-real / validation) and the maritime-distinctive requirements (long-endurance / faster-than-real-time, underwater sensing).
 - **Lightning-talk template** (≈5 min, status update per project) with the same per-project questions, so project inputs are comparable.
 
@@ -57,7 +57,7 @@ This document is a living draft to align our efforts. Please contribute to that 
 
 Proposed format for the **OCEANS** session, adapted from MARE-Madeira and compressed to a half day. 
 
-- **Whole-group opening (short):** scope frame + the seed topics, so everyone is oriented to all of them before splitting. State ground rules so all voices are heard, and that the aim is to prioritize, decide, and commit.
+- **Whole-group opening:** scope frame + the discussion topics, so everyone is oriented to all of them before splitting. State ground rules so all voices are heard, and that the aim is to prioritize, decide, and commit.
 - **Lightning talks:** brief, templated project status updates — context.
 - **Small-group working sessions** on the discussion topics, each with a moderator + scribe and key questions, driving toward *decisions*: the top gaps, how they rank, and where the group disagrees. Then **report-back to the whole room** to converge — or to record the disagreement.
 - **Close:** each group names the cross-cutting problems and the one or two things the roadmap must say; volunteers self-identify for section authorship.
