@@ -362,20 +362,297 @@
 }
 
 % --------------------------------------------------------------------
-% Umbrella survey
+% Overview and survey articles
 % --------------------------------------------------------------------
 
-@misc{aldegheri2025survey,
-  author      = {Aldegheri, Stefano and others},
-  title       = {A Review of Underwater Robotic Simulators},
+@article{shaw2026simplatforms,
+  author      = {Shaw, Subham Kumar and
+                 Muppidwar, Prasanna and
+                 Kadiyam, Jagadeesh},
+  title       = {Simulation Platforms for Underwater Robotic Applications: Architectures, Capabilities, and Research Directions},
+  journal     = {Journal of Field Robotics},
+  volume      = {43},
+  number      = {6},
+  pages       = {4116--4148},
+  year        = {2026},
+  doi         = {10.1002/rob.70234},
+  urldate     = {2026-09-09},
+  annotation  = {The broadest and most systematic of the recent
+                 underwater surveys at 33~journal pages. Centre for
+                 Artificial Intelligence and Robotics, IIT~Mandi, with
+                 G.~H.~Raisoni College of Engineering. First half is a
+                 module-by-module teardown of a generic underwater
+                 simulator (environment, vehicle dynamics via the
+                 six-DOF Fossen equations, sensors and actuators,
+                 internal and acoustic communication, framework);
+                 second half organizes the field by genealogy rather
+                 than paradigm---UWSim and its descendants
+                 (\texttt{freefloating-gazebo}, USVSim), UUVSim and
+                 DAVE, UW-MORSE, Unity-based (URSim), Unreal-based
+                 (HoloOcean, UNav-Sim), plus MARS, Stonefish,
+                 ROCK-Gazebo, WAVE, OysterSim, ChatSim---documenting
+                 for each extension only the modules it changed.
+                 Three things are unique to it: Table~3 pairs minimum
+                 CPU/GPU/VRAM/RAM and OS support with last-commit date
+                 and a three-valued maintenance status read off GitHub;
+                 Table~6 names the real vehicle each simulator has been
+                 validated against; and Section~6 proposes an actual
+                 benchmarking framework (Table~5) with quantitative
+                 metrics---trajectory error, task success rate,
+                 robustness to disturbance, computational
+                 efficiency---rather than only calling for one. Also
+                 argues, unusually, that simulators should model
+                 biological and anthropogenic disturbance (fish,
+                 biofouling, nets, ship noise, debris). Paywalled.},
+}
+
+@article{sim2026marinesim,
+  author      = {Sim, Hyeonmin and
+                 Kweon, Heekyu and
+                 Joe, Hangil},
+  title       = {Marine Robotic Simulators: A Comprehensive Review of Architectures, Sensor Modeling, and Sim-to-Real Challenges},
+  journal     = {InUS Transactions},
+  volume      = {2},
+  number      = {1},
+  pages       = {17--32},
+  year        = {2026},
+  doi         = {10.23380/inustrans.2026.2.1.2},
+  url         = {https://acoms.accesson.kr/inustrans},
+  urldate     = {2026-09-09},
+  annotation  = {Kyungpook National University. Published March~2026
+                 and, at the time of writing, the most current
+                 umbrella reference for the underwater side.
+                 Explicitly methodological: keyword search over IEEE
+                 Xplore, Scopus, and Google Scholar; exclusion of
+                 anything not marine-specific; then a single
+                 consistent rubric---physics modeling, sensor
+                 simulation, rendering, system integration---applied
+                 across all entries in four comparison tables (one of
+                 which is a sensor-by-sensor matrix). Sorts the field
+                 into five generational paradigms: legacy (UWSim, UUV
+                 Simulator), physics-focused (Stonefish, DAVE),
+                 game-engine (HoloOcean, UNav-Sim, MARUS, FURo-Sim),
+                 GPU-native/Omniverse (OceanSim), and other
+                 (acoustics-first tools such as ACSim). The framing
+                 argument is that synthetic-data demand from DRL and
+                 visual SLAM, not vehicle dynamics, is what now drives
+                 simulator design. Open access, CC~BY.},
+}
+
+@inproceedings{aldhaheri2025ursreview,
+  author      = {Aldhaheri, Sara and
+                 Hu, Yang and
+                 Xie, Yongchang and
+                 Wu, Peng and
+                 Kanoulas, Dimitrios and
+                 Liu, Yuanchang},
+  title       = {Underwater Robotic Simulators Review for Autonomous System Development},
+  booktitle   = {Proc.\ {OCEANS} 2025 Brest},
+  pages       = {1--10},
   year        = {2025},
+  doi         = {10.1109/OCEANS58557.2025.11104581},
   eprint      = {2504.06245},
   eprinttype  = {arXiv},
-  url         = {https://arxiv.org/abs/2504.06245},
-  urldate     = {2026-05-21},
-  annotation  = {Recent umbrella survey covering many of the same
-                 underwater simulators we discuss here. Treated as a
-                 companion reference; the author list and exact
-                 affiliations should be verified before citing in a
-                 published version of this document.},
+  url         = {https://frl-ucl.github.io/projects/underwater-robotic-simulators.html},
+  urldate     = {2026-09-09},
+  annotation  = {University College London and the Technology
+                 Innovation Institute, Abu Dhabi. Written as a
+                 practitioner's selection guide, and the only survey
+                 here that states its inclusion gates as plainly as we
+                 do in Section~\ref{sec:criteria}: native ROS support,
+                 evidence of active maintenance, and an open-source
+                 license. Those gates cut the field to five
+                 systems---Stonefish, DAVE, HoloOcean, MARUS,
+                 UNav-Sim---compared on release year, OS support, ROS
+                 integration, physics engine, manipulator support,
+                 multi-vehicle support, acoustic communications, and
+                 perception realism. Its distinctive contribution is
+                 bibliometric: a hand-classified sweep of 240+
+                 downstream studies binned into perception, planning,
+                 control, and mentions-only, used as a proxy for
+                 community traction. Stonefish comes out ahead there,
+                 but the figure is a raw Q1~2025 citation count and so
+                 rewards age; its lead over UNav-Sim is partly a
+                 four-year head start. Conclusions land close to ours:
+                 ROS~1-era simulators risk obsolescence without
+                 deliberate migration, and the missing piece is a
+                 standardized open benchmark. Note that an earlier draft of our
+                 bibliography carried this work under a wrong author
+                 name; the entry has been corrected.},
 }
+
+@inproceedings{huang2024urobench,
+  author      = {Huang, Zebin and
+                 Buchholz, Markus and
+                 Grimaldi, Michele and
+                 Yu, Hao and
+                 Carlucho, Ignacio and
+                 Petillot, Yvan R.},
+  title       = {{URoBench}: Comparative Analyses of Underwater Robotics Simulators from Reinforcement Learning Perspective},
+  booktitle   = {Proc.\ {OCEANS} 2024 Singapore},
+  pages       = {1--8},
+  year        = {2024},
+  doi         = {10.1109/OCEANS51537.2024.10682284},
+  urldate     = {2026-09-09},
+  annotation  = {Heriot-Watt University and the University of
+                 Edinburgh. The only entry in this section that
+                 measures rather than tabulates. Qualitative shortlist
+                 first (physical modeling, sensor modeling, API
+                 usability, documentation, multi-agent support), then
+                 an open-source Gym wrapper plus per-simulator
+                 connectors, Docker-contained, that puts HoloOcean,
+                 DAVE, and Stonefish behind one RL interface; identical
+                 cruise and trajectory-following tasks are run on each
+                 while RTF, CPU, GPU, and memory are logged in GUI and
+                 headless modes (10 runs, 1000 steps, 10\,ms timestep,
+                 i5-10400/RTX~3060). Headline results: HoloOcean
+                 fastest and lightest on CPU, DAVE heaviest on CPU and
+                 memory, Stonefish smallest memory footprint and the
+                 only real GPU user---but every measured RTF is below
+                 unity, even headless. Two caveats the authors state
+                 and that should travel with any citation: the numbers
+                 are simulator-plus-harness, and the ROS pause/resume
+                 round-trip the harness needs is itself costly, so
+                 HoloOcean partly benefits from a native Python
+                 interface rather than a faster engine; and its
+                 multiple-ticks-per-step feature was disabled for
+                 timing uniformity. Code at
+                 \url{https://github.com/oceansystemslab/URoBench}.
+                 Paywalled; no preprint located.},
+}
+
+@article{sawada2024marinesim,
+  author      = {Sawada, Ryouhei and
+                 Miyauchi, Yoshiki and
+                 Wada, Suisei and
+                 Tanigushi, Takuya and
+                 Hamada, Satoru and
+                 Koike, Hiroaki and
+                 Wakita, Kouki and
+                 Maki, Atsuo},
+  title       = {Perspective on the Marine Simulator for Autonomous Vessel Development},
+  journal     = {Journal of Marine Science and Technology},
+  year        = {2024},
+  eprint      = {2407.19673},
+  eprinttype  = {arXiv},
+  url         = {https://arxiv.org/abs/2407.19673},
+  urldate     = {2026-09-09},
+  annotation  = {National Maritime Research Institute (Japan) and
+                 Osaka University. The surface-vessel counterweight to
+                 the underwater surveys, and it reviews a different
+                 axis entirely: not simulator software, but the ship
+                 maneuvering models that sit inside one. Covers
+                 response models (Nomoto~KT and extensions),
+                 autoregressive and neural-network models, and
+                 fluid-dynamics models (whole-ship and modular MMG),
+                 then the four routes to hydrodynamic
+                 derivatives---type-ship values, empirical databases,
+                 captive model tests, and system identification from
+                 maneuvering trials. Assessment criterion is fitness
+                 for the approval purpose against class-society
+                 guidelines, the DNV maritime simulator standard, and
+                 IEC~62065, traded off against the cost of building
+                 the model. Worth reading precisely because it treats
+                 fidelity as a certification question rather than a
+                 rendering question.},
+}
+
+@article{collins2021physicssim,
+  author      = {Collins, Jack and
+                 Chand, Shelvin and
+                 Vanderkop, Anthony and
+                 Howard, David},
+  title       = {A Review of Physics Simulators for Robotic Applications},
+  journal     = {IEEE Access},
+  volume      = {9},
+  pages       = {51416--51431},
+  year        = {2021},
+  doi         = {10.1109/ACCESS.2021.3068769},
+  urldate     = {2026-09-09},
+  annotation  = {CSIRO and QUT. Not a marine review---a whole-of-
+                 robotics index organized by research sub-community
+                 (mobile ground, manipulation, medical, marine,
+                 aerial, soft, learning), each with its own feature
+                 table. Marine robotics is Section~V and Table~5,
+                 split into underwater (UWSim, UUV Simulator,
+                 Stonefish, ROCK-Gazebo, freefloating-gazebo, URSim)
+                 and surface (USVSim), with the explicit observation
+                 that surface-vehicle simulation is rare because
+                 waves, wind, and current are hard. Kept here because
+                 it is the reference that lets us see how thin the
+                 marine column is next to the aerial and manipulation
+                 ones---the same asymmetry that motivates this
+                 review. Open access, CC~BY.},
+}
+
+@inproceedings{cook2014auvsim,
+  author      = {Cook, Daniel and
+                 Vardy, Andrew and
+                 Lewis, Ron},
+  title       = {A Survey of {AUV} and Robot Simulators for Multi-Vehicle Operations},
+  booktitle   = {Proc.\ {IEEE/OES} Autonomous Underwater Vehicles ({AUV})},
+  pages       = {1--8},
+  year        = {2014},
+  doi         = {10.1109/AUV.2014.7054411},
+  urldate     = {2026-09-09},
+  annotation  = {Memorial University of Newfoundland. The first survey
+                 to treat multi-vehicle operation as the selection
+                 driver rather than an afterthought. Inclusion
+                 criteria are stated up front: physical fidelity
+                 sufficient for manipulators and end effectors, a
+                 programmatic interface via scripting or middleware,
+                 optical and/or acoustic sensor models, adequate
+                 documentation, and prior use in published research.
+                 Surveys the general-purpose field, then goes deep on
+                 UWSim, MORSE, and Gazebo, with a separate section on
+                 re-purposing game engines (Unity, Leadwerks, Unreal)
+                 that reads as a direct antecedent of HoloOcean and
+                 MARUS. Two judgments worth carrying forward: it
+                 deliberately \emph{deprioritizes} visual fidelity,
+                 arguing that apparent rendering differences come
+                 mostly from shipped assets rather than from the
+                 simulator---the inverse of how the 2025--2026 surveys
+                 rank the field---and its discussion names abandonment
+                 risk and binary-packaging lag as the practical
+                 failure mode of academic open-source simulators,
+                 which is our community-health criterion stated twelve
+                 years early. Builds on Craighead et~al.\ (2007) and
+                 \textcite{matsebe2008review}; concludes underwater
+                 simulation ``remains a niche problem.'' Paywalled.},
+}
+
+@inproceedings{matsebe2008review,
+  author      = {Matsebe, Oduetse and
+                 Kumile, Christiaan M. and
+                 Tlale, Nkgatho S.},
+  title       = {A Review of Virtual Simulators for Autonomous Underwater Vehicles ({AUVs})},
+  booktitle   = {IFAC Proceedings Volumes (2nd IFAC Workshop on Navigation, Guidance and Control of Underwater Vehicles)},
+  volume      = {41},
+  number      = {1},
+  pages       = {31--37},
+  year        = {2008},
+  doi         = {10.3182/20080408-3-IE-4914.00007},
+  urldate     = {2026-09-09},
+  annotation  = {CSIR South Africa and Tshwane University of
+                 Technology. The historical baseline, written when the
+                 problem was simply that no one could tell which tools
+                 existed; the authors are candid that the selection
+                 reflects their own preference. Covers MVS, CADCON,
+                 IGW, NEPTUNE, DVECS, SUBSIM, and DeepWorks, none of
+                 which survives---most were unreleased internal
+                 academic projects, which is why
+                 \textcite{cook2014auvsim} later set this survey
+                 aside. The taxonomy has aged far better than the
+                 contents: it classifies by how a simulator couples to
+                 real time and real hardware---offline (no
+                 environment, no external sensors, no guarantee a
+                 simulated second matches a real one), online
+                 (real-time, consistent with reality),
+                 hardware-in-the-loop, and hybrid (a real vehicle in a
+                 test tank flying against virtual sensors and
+                 obstacles). That axis is close to what our CI and
+                 mission-validation use cases actually ask, and the
+                 modern surveys have largely dropped it in favor of
+                 rendering and sensor realism. Paywalled.},
+}
+

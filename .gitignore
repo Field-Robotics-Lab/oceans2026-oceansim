@@ -72,3 +72,8 @@ _minted*
 # Private working notes — kept locally, do not publish.
 sim_review/
 *.local.md
+
+# Cached copies of surveyed papers. Downloaded reading material, not our work
+# product, and large. This rule comes after the "!*.pdf" line above so it wins.
+# literature_review/lit/MANIFEST.md stays tracked and records what belongs here.
+literature_review/lit/*.pdf
