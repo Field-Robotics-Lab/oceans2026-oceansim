@@ -94,6 +94,10 @@
     th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
     th { background: var(--band); font-size: 14px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
     .schedule td:first-child { white-space: nowrap; font-weight: 600; width: 130px; color: var(--accent-dark); }
+    .speakers td:first-child { font-weight: 600; color: var(--accent-dark); width: 27%; }
+    .speakers td:nth-child(2) { color: var(--muted); font-size: 15px; }
+    .speakers td:last-child { width: 27%; font-size: 15px; }
+    .speakers .note { font-size: 13.5px; }
 
     /* Card grids (speakers / projects / organizers) */
     .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 8px; }
@@ -116,6 +120,15 @@
     @media (max-width: 640px) {
       .grid { grid-template-columns: 1fr; }
       nav .brand { width: 100%; margin-bottom: 2px; }
+
+      /* Three columns are too narrow to read on a phone, so each speaker
+         becomes a stacked block: name, affiliation, project. */
+      .speakers, .speakers tbody, .speakers tr, .speakers td { display: block; width: auto; }
+      .speakers tr:first-child { display: none; }
+      .speakers tr { border-bottom: 1px solid var(--line); padding: 12px 0; }
+      .speakers td { border-bottom: none; padding: 1px 0; }
+      .speakers td:first-child { width: auto; font-size: 17px; }
+      .speakers td:last-child { width: auto; margin-top: 4px; }
     }
   </style>
 </head>
@@ -246,24 +259,60 @@
 </section>
 
 <!-- ============ INVITED SPEAKERS ============ -->
+<!--
+  Project Highlights slate: one five-minute lightning talk per project.
+  Rows are alphabetical by last name, except Stonefish, which is held to the end
+  because it is delivered as a recorded video. To add a talk, copy one <tr>.
+-->
 <section id="speakers">
   <h2>Invited Speakers</h2>
-  <p class="tba">Coming soon&hellip;</p>
-  <!--
-    Speaker slate (one invited speaker per active project; restore the card grid when confirmed):
-      Gazebo-based:  VRX (Virtual RobotX); DAVE (DAVE Aquatic Virtual Environment); MBARI LRAUV simulation
-      Game engine:   HoloOcean (Unreal Engine); OceanSim (NVIDIA Isaac Sim)
-      Specialist:    Stonefish; WEC-Sim (hydrodynamics verification reference)
-      Practitioner:  one talk from an ocean-autonomy program that uses simulation in production
-
-    Card template:
-    <div class="card">
-      <span class="tag">Gazebo-based</span>
-      <h3>VRX</h3>
-      <p class="aff">Virtual RobotX</p>
-      <p class="bio"><span class="tba">Speaker TBA</span></p>
-    </div>
-  -->
+  <p>
+    The workshop opens with a keynote from <strong>Marc Steinberg</strong> (Office of Naval Research)
+    on the sponsor's perspective: why maritime simulation effort is fragmented, and what the community
+    stands to gain by building across the ecosystem rather than rebuilding in parallel.
+  </p>
+  <p>
+    The Project Highlights block that follows is six five-minute lightning talks, one per project.
+    Each answers the same short set of questions, so the room can see the landscape side by side
+    rather than through six different framings of it.
+  </p>
+  <table class="speakers">
+    <tr>
+      <th>Presenter</th>
+      <th>Affiliation</th>
+      <th>Project &middot; Framework</th>
+    </tr>
+    <tr>
+      <td>Onur Bagoren</td>
+      <td>University of Michigan, Ann Arbor, MI, USA</td>
+      <td><strong>OceanSim</strong><br>Isaac Sim</td>
+    </tr>
+    <tr>
+      <td>Eric Giesberg</td>
+      <td>Naval Surface Warfare Center, Carderock Division, Bethesda, MD, USA</td>
+      <td><strong>NATS</strong><br>U.S. Navy</td>
+    </tr>
+    <tr>
+      <td>Joshua Mangelson</td>
+      <td>Brigham Young University, Provo, UT, USA</td>
+      <td><strong>HoloOcean</strong><br>Unreal Engine</td>
+    </tr>
+    <tr>
+      <td>Evan Palmer</td>
+      <td>Oregon State University, Corvallis, OR, USA</td>
+      <td><strong>VRX, DAVE, LRAUV, WEC-Sim</strong><br>Gazebo</td>
+    </tr>
+    <tr>
+      <td>Ivan Stenius</td>
+      <td>KTH Royal Institute of Technology, Stockholm, Sweden</td>
+      <td><strong>SMaRC</strong><br>Unity</td>
+    </tr>
+    <tr>
+      <td>Hayat Rajani</td>
+      <td>Universitat de Girona, Girona, Spain</td>
+      <td><strong>Stonefish</strong><br>OpenGL<br><span class="note">recorded video</span></td>
+    </tr>
+  </table>
 </section>
 
 <!-- ============ SCHEDULE ============ -->
