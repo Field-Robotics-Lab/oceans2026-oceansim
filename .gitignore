@@ -73,6 +73,11 @@ _minted*
 sim_review/
 *.local.md
 
+# Scratch and outreach working files. These hold harvested contact information
+# for people outside the project, so they must never reach a public repository.
+tmp/
+outreach/
+
 # Cached copies of surveyed papers. Downloaded reading material, not our work
 # product, and large. This rule comes after the "!*.pdf" line above so it wins.
 # literature_review/lit/MANIFEST.md stays tracked and records what belongs here.

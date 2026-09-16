@@ -107,21 +107,28 @@ The purpose of the framework is to give workshop participants a common rubric an
 
 The framework has two layers: a short **descriptive profile** (Part 2.1) and a **capability rubric** (Part 2.2) scored on a common maturity scale.
 
-### 2.1 Descriptive profile (place the project)
+### 2.1 Place the project
 
 Neutral, factual axes — no judgment, just where the project sits. These mirror the comparison axes used in the recent [underwater-simulator survey (Aldhaheri et al., 2025)](https://arxiv.org/abs/2504.06245) and the [open-source autonomous-driving simulator review (Li et al., 2023)](https://arxiv.org/abs/2311.11056), adapted to our multi-domain scope.
 
-- **Category** — autonomy sim / engineering sim / mission sim (from Part 1). We only consider the autonomy sims; the others are recorded as references.
-- **Substrate / engine** — Gazebo, Unreal, Unity, Isaac Sim / Omniverse, standalone, etc.; physics engine and rendering engine.
-- **Domains covered** — underwater / surface / air / land, and whether they can coexist and interact in one world.
-- **Middleware / interface** — LCM, ROS 1, ROS 2 / DDS, YARP, native API, Python.
-- **Autopilot / stack integration** — PX4, ArduPilot, MOOS-IvP, custom; SITL/HITL support.
-- **License** — and, for closed-engine tools, whether the *marine-specific layer* is itself open.
-- **Sensor suite** — camera, depth, IMU/INS, DVL, GPS/GNSS, imaging/multibeam/side-scan sonar, acoustic comms/USBL, lidar, event/thermal, etc.
-- **Maintenance signal** — last release, commit cadence, releases on current OS / ROS, packaging (binaries, Docker), CI.
-- **Adoption signal** — stars, citations, external user base, whether use extends beyond maritime.
+First, two terms — conflating them is the most common confound in these comparisons:
 
-### 2.2 Capability rubric (evaluate the project)
+- A **project** is a past or present effort to build a cohesive set of simulation capabilities for a particular set of use-cases (missions) and users, in support of a specific set of decisions. *E.g., VRX — built for autonomy developers working the multi-domain (USV-primary, with UAV/UUV) RobotX mission set; DAVE — serving both the performers building UUV autonomy and the sponsor gauging their relative technical maturity.*
+- A **framework** is the general-purpose substrate a project rests on (usually one or more). *E.g., VRX on Gazebo; HoloOcean on Unreal; OceanSim on Isaac Sim.*
+
+Many axes below can be asked at either level, so we tag them **[P]** (project) or **[F]** (framework) — a project inherits some traits from its framework and adds others.
+
+- **Category** [P] — autonomy sim / engineering sim / mission sim (from Part 1). We only consider the autonomy sims; the others are recorded as references and context.
+- **Framework(s)** [F] — the substrate(s) the project rests on: Gazebo, Unreal, Unity, Isaac Sim / Omniverse, standalone (OpenGL), etc.; note the physics engine(s) and rendering engine(s).
+- **Domains covered** [P] — underwater / surface / air / land, and whether they can coexist and interact in one world.
+- **Middleware / interface** [P/F] — LCM, ROS 1, ROS 2 / DDS, YARP, native API, Python.
+- **Autopilot / stack integration** [P] — PX4, ArduPilot, MOOS-IvP, custom; SITL/HITL support.
+- **License** [P/F] — the project's license and the framework's, and, for closed-engine frameworks, whether the *marine-specific layer* is itself open.
+- **Sensor suite** [P/F] — camera, depth, IMU/INS, DVL, GPS/GNSS, imaging/multibeam/side-scan sonar, acoustic comms/USBL, lidar, event/thermal, etc.
+- **Maintenance signal** [P/F] — last release, commit cadence, releases on current OS / ROS, packaging (binaries, Docker), CI.
+- **Adoption signal** [P/F] — stars, citations, external user base, whether use extends beyond maritime.
+
+### 2.2 Capability rubric (describe the project)
 
 Six capability areas, each scored on the same maturity scale. These are written as *what an autonomy developer needs from the tool*, so a project's scores double as a statement of the community's priorities.
 
