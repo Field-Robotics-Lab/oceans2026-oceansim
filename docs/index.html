@@ -2,7 +2,8 @@
 <!--
   OCEANS 2026 Monterey workshop site.
   Single self-contained page: edit the text directly below, no build step needed.
-  Sections are plain HTML; the top nav links to the section ids (home/dates/speakers/schedule/organizers).
+  Sections are plain HTML; the top nav links to the section ids
+  (home/dates/readahead/prepare/speakers/schedule/organizers).
   To add a speaker or organizer, copy one card block and fill it in.
 -->
 <html lang="en">
@@ -10,9 +11,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Multi-Domain Open Simulation for Ocean Robotics — OCEANS 2026 Workshop</title>
-  <meta name="description" content="A half-day workshop at IEEE OCEANS 2026 Monterey on open, multi-domain simulation for ocean robotics. Monday 21 September 2026.">
+  <meta name="description" content="A half-day workshop at IEEE OCEANS 2026 Monterey on open, multi-domain simulation for ocean robotics. Monday 21 September 2026, 1330–1730, Portola Hotel &amp; Spa.">
   <meta property="og:title" content="Multi-Domain Open Simulation for Ocean Robotics">
-  <meta property="og:description" content="A half-day workshop at IEEE OCEANS 2026 Monterey. Monday 21 September 2026.">
+  <meta property="og:description" content="A half-day workshop at IEEE OCEANS 2026 Monterey. Monday 21 September 2026, 1330–1730, Portola Hotel &amp; Spa.">
   <meta property="og:type" content="website">
   <style>
     :root {
@@ -125,8 +126,10 @@
     <li class="brand">OceanSim Workshop</li>
     <li><a href="#home">Home</a></li>
     <li><a href="#dates">Dates</a></li>
+    <li><a href="#readahead">Read Ahead</a></li>
+    <li><a href="#prepare">Prepare</a></li>
     <li><a href="#speakers">Invited Speakers</a></li>
-    <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#schedule">Agenda</a></li>
     <li><a href="#organizers">Organizers</a></li>
   </ul>
 </nav>
@@ -134,7 +137,9 @@
 <header class="hero" id="home">
   <h1>Multi-Domain Open Simulation for Ocean Robotics</h1>
   <p class="subtitle">State of Practice and a Community Roadmap</p>
-  <p class="meta">A half-day workshop at <span>IEEE OCEANS 2026 Monterey</span><br>Monday, 21 September 2026</p>
+  <p class="meta">A half-day workshop at <span>IEEE OCEANS 2026 Monterey</span><br>
+    Monday, 21 September 2026 &middot; 1330&ndash;1730 PDT<br>
+    Portola Hotel &amp; Spa, Monterey &middot; <span class="tba">Room TBA</span></p>
   <div class="buttons">
     <a class="btn" href="assets/proposal.pdf">Proposal (PDF)</a>
     <a class="btn secondary" href="https://github.com/Field-Robotics-Lab/oceans2026-oceansim">GitHub repository</a>
@@ -176,8 +181,10 @@
   <h2>Important Dates</h2>
   <table>
     <tr>
-      <td>Registration opening</td>
-      <td class="tba">TBA &middot; via OCEANS 2026 registration <span class="note">(placeholder)</span></td>
+      <td>Registration</td>
+      <td>Attendance is through
+        <a href="https://monterey26.oceansconference.org/register/">OCEANS 2026 registration</a>
+        &mdash; select this workshop when you register.</td>
     </tr>
     <tr>
       <td><strong>Monday, 21 September 2026</strong></td>
@@ -185,6 +192,58 @@
     </tr>
   </table>
   <p class="note">Additional dates (e.g. registration deadline) will be added once confirmed.</p>
+</section>
+
+<!-- ============ READ AHEAD ============ -->
+<section id="readahead">
+  <h2>Read Ahead</h2>
+  <p>
+    The workshop is a working session, not a lecture series, and the afternoon is short. These are
+    the documents that let us spend it on priorities rather than on terminology. The two markdown
+    documents are living drafts in the public repository &mdash; comments and pull requests are welcome
+    before the event.
+  </p>
+  <div class="grid">
+    <div class="card">
+      <h3><a href="https://github.com/Field-Robotics-Lab/oceans2026-oceansim/blob/main/scope_and_framework.md">Scope and Framework</a></h3>
+      <p class="aff">Markdown &middot; GitHub</p>
+      <p class="bio">How the organizing committee is framing the discussion: a working definition and
+        bounding box for &ldquo;maritime robotic simulation,&rdquo; the three axes that separate it from its
+        neighbors, and a common framework for describing and comparing projects.</p>
+    </div>
+    <div class="card">
+      <h3><a href="https://github.com/Field-Robotics-Lab/oceans2026-oceansim/blob/main/whitepaper_process.md">Whitepaper Process</a></h3>
+      <p class="aff">Markdown &middot; GitHub</p>
+      <p class="bio">What happens after the workshop. The joint OCEANS &times; AQUASIM process that turns
+        the discussion into published community guidance, including the roles &mdash; section owners,
+        reviewers, moderators &mdash; that participants can volunteer for on the day.</p>
+    </div>
+    <div class="card">
+      <h3><a href="assets/proposal.pdf">Workshop Proposal</a></h3>
+      <p class="aff">PDF</p>
+      <p class="bio">The accepted proposal: our goals for the event and for the community, and the
+        argument for why this conversation belongs at OCEANS 2026.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEFORE YOU ARRIVE ============ -->
+<!--
+  Pre-arrival prerequisites. Add confirmed items to the list below and delete the
+  corresponding line from the "TBA" item once it is settled.
+-->
+<section id="prepare">
+  <h2>Before You Arrive</h2>
+  <ul>
+    <li><strong>Read the two documents above.</strong> The scoping document in particular &mdash; the
+      breakouts assume everyone is working from the same definitions.</li>
+    <li><strong>Join the mailing list.</strong> The conversation runs before and after the workshop on
+      <a href="mailto:maritime-robotics-simulation+subscribe@groups.io">maritime-robotics-simulation@groups.io</a>.
+      Subscribing now means you arrive already in it &mdash; and it is where the whitepaper drafting will
+      be coordinated afterwards.</li>
+    <li><strong>Bring a laptop.</strong> The breakout sessions are working sessions, captured live.</li>
+    <li class="tba">Additional pre-arrival items (shared drive access, sign-up details) &mdash; TBA.</li>
+  </ul>
 </section>
 
 <!-- ============ INVITED SPEAKERS ============ -->
@@ -210,17 +269,44 @@
 
 <!-- ============ SCHEDULE ============ -->
 <section id="schedule">
-  <h2>Schedule</h2>
-  <p class="tba">Coming soon&hellip;</p>
-  <!--
-    Draft half-day agenda (restore the table below when ready to publish):
-    00:00–00:15  Welcome. Scope of "multi-domain ocean sim" and the working inclusion criteria.
-    00:15–01:30  State of the art and state of practice. Short invited talks (12–15 min), one per project.
-    01:30–02:00  Coffee break and informal discussion.
-    02:00–02:45  Synthetic data and ML training panel.
-    02:45–03:30  Roadmap working session. Breakouts: fidelity gaps; tooling and CI; funding and governance.
-    03:30–03:45  Close. Assignment of section editors for the post-workshop white paper.
-  -->
+  <h2>Tentative Agenda</h2>
+  <p>
+    Monday, 21 September 2026 &middot; 1330&ndash;1730 PDT &middot; Portola Hotel &amp; Spa, Monterey
+    &middot; <span class="tba">Room TBA</span>
+  </p>
+  <table class="schedule">
+    <tr>
+      <td>1330&ndash;1430</td>
+      <td><strong>Welcome and Framing</strong><br>
+        Introductions; overview and framing of the discussion topics;
+        keynote by Marc Steinberg (ONR) on the sponsor's perspective.</td>
+    </tr>
+    <tr>
+      <td>1430&ndash;1445</td>
+      <td>Break</td>
+    </tr>
+    <tr>
+      <td>1445&ndash;1545</td>
+      <td><strong>Project Highlights</strong><br>
+        Intent and rubric, then six five-minute lightning talks &mdash; one per project, answering a
+        common set of questions so the room can see the landscape side by side.</td>
+    </tr>
+    <tr>
+      <td>1545&ndash;1615</td>
+      <td>Coffee break and informal discussion</td>
+    </tr>
+    <tr>
+      <td>1615&ndash;1715</td>
+      <td><strong>Breakout Discussions</strong><br>
+        Three to four topics in small groups, each with a moderator and scribe, working toward
+        decisions: the top gaps, how they rank, and where the group disagrees.</td>
+    </tr>
+    <tr>
+      <td>1715&ndash;1730</td>
+      <td><strong>Summary and Next Steps</strong><br>
+        Report-back, the handoff to AQUASIM, and the whitepaper process.</td>
+    </tr>
+  </table>
 </section>
 
 <!-- ============ ORGANIZERS ============ -->
@@ -285,6 +371,10 @@
     <a href="https://github.com/Field-Robotics-Lab/oceans2026-oceansim/issues">open an issue</a>
     with your name, affiliation, and how you would like to help, or email
     <a href="mailto:bbingham@nps.edu">bbingham@nps.edu</a>.
+  </p>
+  <p>
+    <strong>Join the conversation:</strong> the community mailing list is
+    <a href="mailto:maritime-robotics-simulation+subscribe@groups.io">maritime-robotics-simulation@groups.io</a>.
   </p>
   <p>Brian Bingham, Naval Postgraduate School &middot; OCEANS 2026 Monterey</p>
 </footer>
