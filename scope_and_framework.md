@@ -1,6 +1,6 @@
 # Scoping Maritime Robotic Simulation, and a Framework for Assessing It
 
-Working discussion document for the OCEANS 2026 Monterey *OCEANSSim* workshop. This is a draft for refinement with co-organizers and contributors.
+Working discussion document for the OCEANS 2026 Monterey *OCEANSim* workshop. This is a draft for refinement with co-organizers and contributors.
 
 It has two parts:
 
