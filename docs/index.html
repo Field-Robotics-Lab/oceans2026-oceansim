@@ -3,7 +3,7 @@
   OCEANS 2026 Monterey workshop site.
   Single self-contained page: edit the text directly below, no build step needed.
   Sections are plain HTML; the top nav links to the section ids
-  (home/dates/readahead/prepare/speakers/schedule/organizers).
+  (home/readahead/prepare/speakers/schedule/organizers).
   To add a speaker or organizer, copy one card block and fill it in.
 -->
 <html lang="en">
@@ -94,7 +94,7 @@
     table { width: 100%; border-collapse: collapse; margin: 6px 0 12px; }
     th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
     th { background: var(--band); font-size: 14px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
-    .schedule td:first-child { white-space: nowrap; font-weight: 600; width: 130px; color: var(--accent-dark); }
+    .schedule td:last-child { white-space: nowrap; font-weight: 600; width: 90px; text-align: right; color: var(--accent-dark); }
     .speakers td:first-child { font-weight: 600; color: var(--accent-dark); width: 27%; }
     .speakers td:nth-child(2) { color: var(--muted); font-size: 15px; }
     .speakers td:last-child { width: 27%; font-size: 15px; }
@@ -139,7 +139,6 @@
   <ul>
     <li class="brand">OceanSim Workshop</li>
     <li><a href="#home">Home</a></li>
-    <li><a href="#dates">Dates</a></li>
     <li><a href="#readahead">Read Ahead</a></li>
     <li><a href="#prepare">Prepare</a></li>
     <li><a href="#speakers">Invited Speakers</a></li>
@@ -256,37 +255,37 @@
       <th>Project &middot; Framework</th>
     </tr>
     <tr>
-      <td>Marc Steinberg</td>
+      <td>Marc S.</td>
       <td>Office of Naval Research</td>
       <td><strong>Keynote</strong></td>
     </tr>
     <tr>
-      <td>Onur Bagoren</td>
-      <td>University of Michigan</td>
-      <td><strong>OceanSim</strong><br>Isaac Sim</td>
-    </tr>
-    <tr>
-      <td>Eric Giesberg</td>
-      <td>Naval Surface Warfare Center, Carderock Division</td>
-      <td><strong>NATS</strong><br> </td>
-    </tr>
-    <tr>
-      <td>Joshua Mangelson</td>
+      <td>Joshua M.</td>
       <td>Brigham Young University</td>
       <td><strong>HoloOcean</strong><br>Unreal Engine</td>
     </tr>
     <tr>
-      <td>Evan Palmer</td>
-      <td>Oregon State University</td>
-      <td><strong>LRAUV, WEC-Sim, VRX, DAVE, etc.</strong><br>Gazebo</td>
-    </tr>
-    <tr>
-      <td>Ivan Stenius</td>
+      <td>Ivan S.</td>
       <td>KTH Royal Institute of Technology</td>
       <td><strong>SMaRC</strong><br>Unity</td>
     </tr>
     <tr>
-      <td>Hayat Rajani</td>
+      <td>Evan P.</td>
+      <td>Oregon State University</td>
+      <td><strong>LRAUV, WEC-Sim, VRX, DAVE, etc.</strong><br>Gazebo</td>
+    </tr>
+    <tr>
+      <td>Onur B.</td>
+      <td>University of Michigan</td>
+      <td><strong>OceanSim</strong><br>Isaac Sim</td>
+    </tr>
+    <tr>
+      <td>Eric G.</td>
+      <td>Naval Surface Warfare Center, Carderock Division</td>
+      <td><strong>NATS</strong><br> </td>
+    </tr>
+    <tr>
+      <td>Hayat R.</td>
       <td>Universitat de Girona</td>
       <td><strong>Stonefish</strong><br>OpenGL<br><span class="note">recorded video</span></td>
     </tr>
@@ -302,35 +301,29 @@
   </p>
   <table class="schedule">
     <tr>
-      <td>1330&ndash;1430</td>
-      <td><strong>Welcome and Framing</strong><br>
-        Introductions; overview and framing of the discussion topics;
-        keynote by Marc Steinberg (ONR) on the sponsor's perspective.</td>
+      <td><strong>Welcome, Framing and Keynote</strong><br>
+        Introduction<br>
+        Keynote by Marc S. (ONR).</td>
+      <td>35 min</td>
     </tr>
     <tr>
-      <td>1430&ndash;1445</td>
+      <td><strong>Project Highlight Talks</strong><br>
+        6-minute talks per project, following the provided format and questions.</td>
+      <td>60 min</td>
+    </tr>
+    <tr>
       <td>Break</td>
+      <td>15 min</td>
     </tr>
     <tr>
-      <td>1445&ndash;1545</td>
-      <td><strong>Project Highlights</strong><br>
-        Intent and rubric, then six five-minute lightning talks &mdash; one per project, answering a
-        common set of questions so the room can see the landscape side by side.</td>
-    </tr>
-    <tr>
-      <td>1545&ndash;1615</td>
-      <td>Coffee break and informal discussion</td>
-    </tr>
-    <tr>
-      <td>1615&ndash;1715</td>
       <td><strong>Breakout Discussions</strong><br>
-        Three to four topics in small groups, each with a moderator and scribe, working toward
-        decisions: the top gaps, how they rank, and where the group disagrees.</td>
+        Moderated small group discussions on specific topics.</td>
+      <td>90 min</td>
     </tr>
     <tr>
-      <td>1715&ndash;1730</td>
       <td><strong>Summary and Next Steps</strong><br>
         Report-back, the handoff to AQUASIM, and the whitepaper process.</td>
+      <td>20 min</td>
     </tr>
   </table>
 </section>
